@@ -39,26 +39,28 @@ namespace QuanLyChiTieu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string user_name = txtTenDangNhap.Text;
-            string pass_Word = txtMatKhau.Text;
+            /* string user_name = txtTenDangNhap.Text;
+             string pass_Word = txtMatKhau.Text;
 
-            if(user_name == "" || pass_Word == "")
-            {
-                MessageBox.Show("Vui lòng không để trống!","Thông báo");
-            }    
-            else
-            {
-                string query = "select * from TaiKhoan where TenTK = '"+user_name+"' and MatKhau = '"+pass_Word+"'";
-                if (modify.TaiKhoans(query).Count != 0)
-                {
-                    fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
+             if(user_name == "" || pass_Word == "")
+             {
+                 MessageBox.Show("Vui lòng không để trống!","Thông báo");
+             }    
+             else
+             {
+                 string query = "select * from TaiKhoan where TenTK = '"+user_name+"' and MatKhau = '"+pass_Word+"'";
+                 if (modify.TaiKhoans(query).Count != 0)
+                 {
+                     fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
                     quanLyChiTieu.ShowDialog();
-                }    
-                else
-                {
-                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!","Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }    
-            }
+                 }    
+                 else
+                 {
+                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!","Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                 }    
+             }*/
+            fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
+            quanLyChiTieu.ShowDialog();
         }
 
         bool Login(string userName, string passWord)

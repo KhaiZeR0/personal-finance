@@ -115,6 +115,7 @@
             this.bunifuPanel7.ShowBorders = true;
             this.bunifuPanel7.Size = new System.Drawing.Size(358, 551);
             this.bunifuPanel7.TabIndex = 4;
+            this.bunifuPanel7.Click += new System.EventHandler(this.bunifuPanel7_Click);
             // 
             // label11
             // 
@@ -468,6 +469,7 @@
             this.bunifuButton7.TextMarginLeft = 0;
             this.bunifuButton7.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton7.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton7.Click += new System.EventHandler(this.bunifuButton7_Click);
             // 
             // label10
             // 

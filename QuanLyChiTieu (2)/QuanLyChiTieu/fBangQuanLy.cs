@@ -22,5 +22,15 @@ namespace QuanLyChiTieu
         {
 
         }
+
+        private void bunifuPanel7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bunifuButton7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

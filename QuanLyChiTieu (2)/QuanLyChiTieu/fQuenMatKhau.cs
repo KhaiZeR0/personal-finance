@@ -16,5 +16,11 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fResetPass fResetPass = new fResetPass();
+            fResetPass.Show();
+        }
     }
 }

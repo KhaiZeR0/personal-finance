@@ -32,5 +32,17 @@ namespace QuanLyChiTieu
         {
             this.Close();
         }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            fThemChiTieu themchitieu = new fThemChiTieu();
+            themchitieu.ShowDialog();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            fHistory fHistory = new fHistory();
+            fHistory.ShowDialog();
+        }
     }
 }

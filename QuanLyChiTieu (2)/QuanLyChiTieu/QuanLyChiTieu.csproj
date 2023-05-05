@@ -433,6 +433,12 @@
     <Compile Include="fDangKy.Designer.cs">
       <DependentUpon>fDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSetting.Designer.cs">
+      <DependentUpon>fSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThemChiTieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -477,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fHistory.resx">
       <DependentUpon>fHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSetting.resx">
+      <DependentUpon>fSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fResetPass.resx">
       <DependentUpon>fResetPass.cs</DependentUpon>

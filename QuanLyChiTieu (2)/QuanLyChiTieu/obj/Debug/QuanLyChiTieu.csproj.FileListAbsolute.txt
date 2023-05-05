@@ -437,8 +437,9 @@ C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.licenses
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
-C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
-C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CopyComplete
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSetting.resources
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache

@@ -44,5 +44,12 @@ namespace QuanLyChiTieu
             fHistory fHistory = new fHistory();
             fHistory.ShowDialog();
         }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            fSetting fSetting = new fSetting();
+            fSetting.ShowDialog();
+        }
+
     }
 }

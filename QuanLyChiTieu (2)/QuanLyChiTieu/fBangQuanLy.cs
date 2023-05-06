@@ -51,5 +51,9 @@ namespace QuanLyChiTieu
             fSetting.ShowDialog();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

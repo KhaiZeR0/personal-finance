@@ -442,7 +442,6 @@ C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSetting.resources
-<<<<<<< HEAD
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
@@ -524,15 +523,12 @@ C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\Qua
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.GenerateResource.cache
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.licenses
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CoreCompileInputs.cache
-C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
-C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
 =======
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
->>>>>>> f5785f3ef918cc0b1967b383899cde3cd90a2d20
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\Bunifu.Licensing.dll
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll

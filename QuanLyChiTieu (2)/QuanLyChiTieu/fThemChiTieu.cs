@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyChiTieu
@@ -44,16 +37,7 @@ namespace QuanLyChiTieu
                     MessageBox.Show("Mời bạn nhập đầy đủ thông tin");
                 }
                 int tenTrung=GetDaChon(txtTen.Text);
-                if (tenTrung == -1)
-                {
-                    tenTrung = dgvThongtin.Rows.Add();
-                    capNhat(tenTrung);
-                }
-                else
-                {
-                    capNhat(tenTrung);
-                    MessageBox.Show("Cập nhật thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
+                
             }
             catch (Exception ex)
             {

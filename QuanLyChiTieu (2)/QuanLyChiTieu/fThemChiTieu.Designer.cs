@@ -102,7 +102,7 @@
             this.dgvThongtin.Name = "dgvThongtin";
             this.dgvThongtin.RowHeadersWidth = 51;
             this.dgvThongtin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThongtin.Size = new System.Drawing.Size(841, 427);
+            this.dgvThongtin.Size = new System.Drawing.Size(806, 427);
             this.dgvThongtin.TabIndex = 6;
             this.dgvThongtin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

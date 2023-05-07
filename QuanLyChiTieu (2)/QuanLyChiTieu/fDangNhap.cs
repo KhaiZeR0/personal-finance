@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyChiTieu
 {
@@ -39,28 +41,27 @@ namespace QuanLyChiTieu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            /* string user_name = txtTenDangNhap.Text;
-             string pass_Word = txtMatKhau.Text;
+            string user_name = txtTenDangNhap.Text;
+            string pass_Word = txtMatKhau.Text;
+           
+            if (user_name == "" || pass_Word == "")
+            {
+                MessageBox.Show("Vui lòng không để trống!", "Thông báo");
+            }
+            else
+            {
+                string query = "select * from TaiKhoan where TenTK = '" + user_name + "' and MatKhau = '" + pass_Word + "'";
 
-             if(user_name == "" || pass_Word == "")
-             {
-                 MessageBox.Show("Vui lòng không để trống!","Thông báo");
-             }    
-             else
-             {
-                 string query = "select * from TaiKhoan where TenTK = '"+user_name+"' and MatKhau = '"+pass_Word+"'";
-                 if (modify.TaiKhoans(query).Count != 0)
-                 {
-                     fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
+                if (modify.TaiKhoans(query).Count != 0)
+                {
+                    fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
                     quanLyChiTieu.ShowDialog();
-                 }    
-                 else
-                 {
-                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!","Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                 }    
-             }*/
-            fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
-            quanLyChiTieu.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         bool Login(string userName, string passWord)

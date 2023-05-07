@@ -35,9 +35,8 @@ namespace QuanLyChiTieu
             string xnmk = txtXacNhanMatKhau.Text;
             string email = txtEmail.Text;
 
-            if (!checkAccount(tentk)) { MessageBox.Show("Vui lòng nhập tài khoản dài 6-24 ký tự, với các ký tự chữ và số, chữ hoa và chữ thường!"); return; }
             if (!checkAccount(matkhau)) { MessageBox.Show("Vui lòng nhập mật khẩu dài 6-24 ký tự, với các ký tự chữ và số, chữ hoa và chữ thường!"); return; }
-            if (!checkAccount(xnmk)) { MessageBox.Show("Xác nhận mật khẩu không trùng khớp!"); return; }
+            if (xnmk != matkhau) { MessageBox.Show("Xác nhận mật khẩu không trùng khớp!"); return; }
             if (!checkEmail(email)) { MessageBox.Show("Vui lòng nhập đúng định dang email"); return; }
             if (modify.TaiKhoans("select * from TaiKhoan where Email_TK = '" + email + "'").Count != 0) { MessageBox.Show("Email này đã được đăng ký!"); } 
             

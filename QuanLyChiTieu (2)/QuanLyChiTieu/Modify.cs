@@ -22,8 +22,8 @@ namespace QuanLyChiTieu
 
                 while (sqlDataReader.Read())
                 {
-                    string tenTaiKhoan = sqlDataReader.GetValue(1).ToString();
-                    string matKhau = sqlDataReader.GetValue(2).ToString();
+                    string tenTaiKhoan = sqlDataReader.GetValue(0).ToString();
+                    string matKhau = sqlDataReader.GetValue(1).ToString();
 
                     TaiKhoan taiKhoan = new TaiKhoan(tenTaiKhoan, matKhau);
                     taiKhoans.Add(taiKhoan);

@@ -32,7 +32,7 @@ namespace QuanLyChiTieu
         {
             try
             {
-                if(txtTen.Text == "" || txtTien.Text == "" || txtDM.Text == "" || txtGC.Text == "")
+                if( txtTien.Text == "" || txtDM.Text == "")
                 {
                     MessageBox.Show("Mời bạn nhập đầy đủ thông tin");
                 }
@@ -52,6 +52,11 @@ namespace QuanLyChiTieu
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fThemChiTieu_Load(object sender, EventArgs e)
         {
 
         }

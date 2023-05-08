@@ -1,4 +1,4 @@
-﻿CREATE DATABASE QuanLyChiTieu
+CREATE DATABASE QuanLyChiTieu
 GO
 
 USE QuanLyChiTieu

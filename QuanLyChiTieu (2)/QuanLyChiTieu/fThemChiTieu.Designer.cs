@@ -85,6 +85,7 @@
             this.btnxoainfo.TabIndex = 11;
             this.btnxoainfo.Text = "Xoá";
             this.btnxoainfo.UseVisualStyleBackColor = true;
+            this.btnxoainfo.Click += new System.EventHandler(this.btnxoainfo_Click);
             // 
             // dgvThongtin
             // 
@@ -173,6 +174,7 @@
             this.btndeldanhmuc.TabIndex = 8;
             this.btndeldanhmuc.Text = "Xoá";
             this.btndeldanhmuc.UseVisualStyleBackColor = true;
+            this.btndeldanhmuc.Click += new System.EventHandler(this.btndeldanhmuc_Click);
             // 
             // bunifuPanel2
             // 
@@ -219,6 +221,7 @@
             this.btnadddanhmuc.TabIndex = 7;
             this.btnadddanhmuc.Text = "Thêm";
             this.btnadddanhmuc.UseVisualStyleBackColor = true;
+            this.btnadddanhmuc.Click += new System.EventHandler(this.btnadddanhmuc_Click);
             // 
             // txtDM
             // 

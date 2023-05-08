@@ -44,7 +44,7 @@ namespace QuanLyChiTieu
         {
             string user_name = txtTenDangNhap.Text;
             string pass_Word = txtMatKhau.Text;
-           
+
             if (user_name == "" || pass_Word == "")
             {
                 MessageBox.Show("Vui lòng không để trống!", "Thông báo");

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace QuanLyChiTieu
 {
@@ -24,6 +26,7 @@ namespace QuanLyChiTieu
                 {
                     string tenTaiKhoan = sqlDataReader.GetValue(0).ToString();
                     string matKhau = sqlDataReader.GetValue(1).ToString();
+                    
 
                     TaiKhoan taiKhoan = new TaiKhoan(tenTaiKhoan, matKhau);
                     taiKhoans.Add(taiKhoan);
@@ -34,6 +37,17 @@ namespace QuanLyChiTieu
 
             return taiKhoans;
         }
+        private static string GenerateHash(string toHash)
+        {
+            var crypt = new SHA256Managed();
+            string hash = String.Empty;
+            byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
+            foreach (byte theByte in crypto)
+            {
+                hash += theByte.ToString("x2");
+            }
+            return hash;
+        } 
 
         public void Command(string query)
         {

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace QuanLyChiTieu
 {
@@ -50,7 +51,8 @@ namespace QuanLyChiTieu
             }
             else
             {
-                string query = "select * from TaiKhoan where TenTK = '" + user_name + "' and MatKhau = '" + pass_Word + "'";
+                string passHash = GenerateHash(pass_Word);
+                string query = "select * from TaiKhoan where TenTK = '" + user_name + "' and MatKhau = '" + passHash + "'";
 
                 if (modify.TaiKhoans(query).Count != 0)
                 {
@@ -64,9 +66,16 @@ namespace QuanLyChiTieu
             }
         }
 
-        bool Login(string userName, string passWord)
+        private static string GenerateHash(string toHash)
         {
-            return false;
+            var crypt = new SHA256Managed();
+            string hash = String.Empty;
+            byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
+            foreach (byte theByte in crypto)
+            {
+                hash += theByte.ToString("x2");
+            }
+            return hash;
         }
     }
 }

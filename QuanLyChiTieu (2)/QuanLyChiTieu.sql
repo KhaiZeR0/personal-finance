@@ -13,7 +13,7 @@ CREATE TABLE TaiKhoan
 	Email_TK VARCHAR(255) NOT NULL,
 )
 GO
-
+select * from TaiKhoan
 -- Tạo bảng danh mục chi tiêu
 CREATE TABLE DanhMucChiTieu 
 (

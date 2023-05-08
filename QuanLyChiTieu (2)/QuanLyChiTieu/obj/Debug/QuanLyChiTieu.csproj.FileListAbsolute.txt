@@ -528,7 +528,7 @@ C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\Qua
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Security.pdb
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Web.Services.Description.pdb
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSetting.resources
-C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
-C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
+C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache

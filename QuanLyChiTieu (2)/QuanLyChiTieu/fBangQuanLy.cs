@@ -47,8 +47,8 @@ namespace QuanLyChiTieu
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            fSetting fSetting = new fSetting();
-            fSetting.ShowDialog();
+            fthunhap fthunhap = new fthunhap();
+            fthunhap.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -59,6 +59,12 @@ namespace QuanLyChiTieu
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Groupinfo groupinfo = new Groupinfo();
+            groupinfo.ShowDialog();
         }
     }
 }

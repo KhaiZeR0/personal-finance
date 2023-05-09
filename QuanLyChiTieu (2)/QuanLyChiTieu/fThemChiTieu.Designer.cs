@@ -229,7 +229,7 @@
             this.txtDM.Location = new System.Drawing.Point(25, 224);
             this.txtDM.Name = "txtDM";
             this.txtDM.Size = new System.Drawing.Size(202, 21);
-            this.txtDM.TabIndex = 7;
+            this.txtDM.TabIndex = 3;
             // 
             // txtGC
             // 
@@ -237,7 +237,7 @@
             this.txtGC.Multiline = true;
             this.txtGC.Name = "txtGC";
             this.txtGC.Size = new System.Drawing.Size(202, 66);
-            this.txtGC.TabIndex = 10;
+            this.txtGC.TabIndex = 4;
             // 
             // label4
             // 
@@ -255,7 +255,7 @@
             this.txtTien.Location = new System.Drawing.Point(25, 141);
             this.txtTien.Name = "txtTien";
             this.txtTien.Size = new System.Drawing.Size(202, 20);
-            this.txtTien.TabIndex = 8;
+            this.txtTien.TabIndex = 2;
             // 
             // label3
             // 
@@ -295,7 +295,7 @@
             this.txtTen.Location = new System.Drawing.Point(25, 63);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(202, 20);
-            this.txtTen.TabIndex = 4;
+            this.txtTen.TabIndex = 1;
             // 
             // label11
             // 
@@ -318,7 +318,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fThemChiTieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fdienchitieu";
+            this.Text = "Bảng Chi Tiêu";
             this.Load += new System.EventHandler(this.fThemChiTieu_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();

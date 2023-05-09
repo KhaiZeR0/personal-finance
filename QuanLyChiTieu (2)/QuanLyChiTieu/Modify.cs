@@ -37,18 +37,7 @@ namespace QuanLyChiTieu
 
             return taiKhoans;
         }
-        private static string GenerateHash(string toHash)
-        {
-            var crypt = new SHA256Managed();
-            string hash = String.Empty;
-            byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
-            foreach (byte theByte in crypto)
-            {
-                hash += theByte.ToString("x2");
-            }
-            return hash;
-        } 
-
+     
         public void Command(string query)
         {
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())

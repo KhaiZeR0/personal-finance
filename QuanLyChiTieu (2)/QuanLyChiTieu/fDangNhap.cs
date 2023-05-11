@@ -42,7 +42,10 @@ namespace QuanLyChiTieu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string user_name = txtTenDangNhap.Text;
+            fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
+            quanLyChiTieu.ShowDialog();
+
+           /* string user_name = txtTenDangNhap.Text;
             string pass_Word = txtMatKhau.Text;
 
             if (user_name == "" || pass_Word == "")
@@ -63,7 +66,7 @@ namespace QuanLyChiTieu
                 {
                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
+            }*/
         }
 
         private static string GenerateHash(string toHash)

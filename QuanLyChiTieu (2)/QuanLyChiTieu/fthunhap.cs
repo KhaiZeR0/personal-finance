@@ -47,21 +47,9 @@ namespace QuanLyChiTieu
         {
             try
             {
-                if (txtGhiChu.Text == "" && txtThuNhap.Text == "")
+                if ( txtThuNhap.Text == "")
                 {
                     MessageBox.Show("Vui lòng nhập đủ thông tin!", "Thông Báo!");
-                    return;
-                }
-
-                if (txtGhiChu.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập Ghi Chú!", "Thông Báo!");
-                    return;
-                }
-
-                if (txtThuNhap.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập Số Tiền!", "Thông Báo!");
                     return;
                 }
 

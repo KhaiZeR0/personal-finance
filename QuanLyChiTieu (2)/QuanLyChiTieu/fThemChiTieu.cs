@@ -90,5 +90,15 @@ namespace QuanLyChiTieu
         {
             txtDM.Items.Add(txtDM.Text);
         }
+
+        private void txtGC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

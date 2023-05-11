@@ -238,6 +238,7 @@
             this.txtGC.Name = "txtGC";
             this.txtGC.Size = new System.Drawing.Size(202, 66);
             this.txtGC.TabIndex = 4;
+            this.txtGC.TextChanged += new System.EventHandler(this.txtGC_TextChanged);
             // 
             // label4
             // 
@@ -256,6 +257,7 @@
             this.txtTien.Name = "txtTien";
             this.txtTien.Size = new System.Drawing.Size(202, 20);
             this.txtTien.TabIndex = 2;
+            this.txtTien.TextChanged += new System.EventHandler(this.txtTien_TextChanged);
             // 
             // label3
             // 

@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fthunhap));
             this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnSaveThuNhap = new System.Windows.Forms.Button();
             this.txtThuNhap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvLichSuThuNhap = new System.Windows.Forms.DataGridView();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.bunifuPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuThuNhap)).BeginInit();
             this.bunifuPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.bunifuPanel4.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel4.BorderRadius = 30;
             this.bunifuPanel4.BorderThickness = 1;
-            this.bunifuPanel4.Controls.Add(this.textBox1);
+            this.bunifuPanel4.Controls.Add(this.txtGhiChu);
             this.bunifuPanel4.Controls.Add(this.label6);
             this.bunifuPanel4.Controls.Add(this.label11);
             this.bunifuPanel4.Controls.Add(this.btnSaveThuNhap);
@@ -63,14 +63,15 @@
             this.bunifuPanel4.ShowBorders = true;
             this.bunifuPanel4.Size = new System.Drawing.Size(220, 329);
             this.bunifuPanel4.TabIndex = 11;
+            this.bunifuPanel4.Click += new System.EventHandler(this.bunifuPanel4_Click);
             // 
-            // textBox1
+            // txtGhiChu
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 154);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 60);
-            this.textBox1.TabIndex = 13;
+            this.txtGhiChu.Location = new System.Drawing.Point(25, 154);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(172, 60);
+            this.txtGhiChu.TabIndex = 13;
             // 
             // label6
             // 
@@ -103,6 +104,7 @@
             this.btnSaveThuNhap.TabIndex = 10;
             this.btnSaveThuNhap.Text = "Lưu Lại";
             this.btnSaveThuNhap.UseVisualStyleBackColor = true;
+            this.btnSaveThuNhap.Click += new System.EventHandler(this.btnSaveThuNhap_Click_1);
             // 
             // txtThuNhap
             // 
@@ -110,6 +112,8 @@
             this.txtThuNhap.Name = "txtThuNhap";
             this.txtThuNhap.Size = new System.Drawing.Size(175, 20);
             this.txtThuNhap.TabIndex = 6;
+            this.txtThuNhap.Text = "11";
+            this.txtThuNhap.TextChanged += new System.EventHandler(this.txtThuNhap_TextChanged);
             // 
             // label7
             // 
@@ -122,16 +126,17 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Thu Nhập Cá Nhân";
             // 
-            // dataGridView1
+            // dgvLichSuThuNhap
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 65);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 240);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvLichSuThuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLichSuThuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLichSuThuNhap.Location = new System.Drawing.Point(22, 65);
+            this.dgvLichSuThuNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvLichSuThuNhap.Name = "dgvLichSuThuNhap";
+            this.dgvLichSuThuNhap.RowHeadersWidth = 51;
+            this.dgvLichSuThuNhap.RowTemplate.Height = 24;
+            this.dgvLichSuThuNhap.Size = new System.Drawing.Size(467, 240);
+            this.dgvLichSuThuNhap.TabIndex = 13;
             // 
             // bunifuPanel2
             // 
@@ -142,7 +147,7 @@
             this.bunifuPanel2.BorderRadius = 30;
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.label13);
-            this.bunifuPanel2.Controls.Add(this.dataGridView1);
+            this.bunifuPanel2.Controls.Add(this.dgvLichSuThuNhap);
             this.bunifuPanel2.Location = new System.Drawing.Point(238, 12);
             this.bunifuPanel2.Name = "bunifuPanel2";
             this.bunifuPanel2.ShowBorders = true;
@@ -173,7 +178,7 @@
             this.Text = "Thu Nhập Cá Nhân";
             this.bunifuPanel4.ResumeLayout(false);
             this.bunifuPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuThuNhap)).EndInit();
             this.bunifuPanel2.ResumeLayout(false);
             this.bunifuPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -186,10 +191,10 @@
         private System.Windows.Forms.Button btnSaveThuNhap;
         private System.Windows.Forms.TextBox txtThuNhap;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLichSuThuNhap;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
         private System.Windows.Forms.Label label13;
     }

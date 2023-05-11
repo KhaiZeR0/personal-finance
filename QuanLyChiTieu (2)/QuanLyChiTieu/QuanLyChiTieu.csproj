@@ -478,6 +478,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs" />
+    <Compile Include="Thunhapcanhan.cs" />
     <EmbeddedResource Include="fBangQuanLy.resx">
       <DependentUpon>fBangQuanLy.cs</DependentUpon>
     </EmbeddedResource>

@@ -531,8 +531,6 @@ C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\Qua
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fthunhap.resources
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Groupinfo.resources
-C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
-C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
@@ -699,3 +697,5 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\Quan
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Primitives.pdb
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Security.pdb
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Web.Services.Description.pdb
+C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
+C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Data;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyChiTieu
 {
@@ -11,12 +15,17 @@ namespace QuanLyChiTieu
         }
         private void capNhat(int selectedRow)
         {
-            dgvThongtin.Rows[selectedRow].Cells[0].Value = txtTen;
-            dgvThongtin.Rows[selectedRow].Cells[1].Value = txtTien;
-            dgvThongtin.Rows[selectedRow].Cells[2].Value = txtDM;
-            dgvThongtin.Rows[selectedRow].Cells[3].Value = txtGC;
+            dgvThongtin.Rows[selectedRow].Cells[0].Value = txtTen.Text;
+            dgvThongtin.Rows[selectedRow].Cells[1].Value = txtTien.Text;
+            dgvThongtin.Rows[selectedRow].Cells[2].Value = txtDM.Text;
+            dgvThongtin.Rows[selectedRow].Cells[3].Value = txtSL.Text;
+            dgvThongtin.Rows[selectedRow].Cells[4].Value = txtGC.Text;
         }
+        
+        private void dgvThongtin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
         private int GetDaChon(string colTen)
         {
             for (int i = 0; i < dgvThongtin.Rows.Count; i++)
@@ -33,19 +42,27 @@ namespace QuanLyChiTieu
         {
             try
             {
-                if (txtTen.Text == "" || txtTien.Text == "")
+                if ( txtTien.Text == "" )
                 {
-                    MessageBox.Show("Mời bạn nhập đầy đủ thông tin");
+                    MessageBox.Show("Vui lòng không để trống số tiền","Thông báo");
                 }
-                int tenTrung = GetDaChon(txtTen.Text);
-                if (tenTrung == -1)
+                /*int tenTrung = GetDaChon(txtTen.Text);*/
+                else if (txtDM.Text == "")
                 {
-                    tenTrung = dgvThongtin.Rows.Add();
-                    capNhat(tenTrung);
+                    MessageBox.Show("Vui lòng không để trống danh mục chi tiêu", "Thông báo");
+
+                }
+                else if (txtSL.Text == "")
+                {
+                    MessageBox.Show("Vui lòng không để trống số lượng", "Thông báo");
+
                 }
                 else
                 {
-                    capNhat(tenTrung);
+                    int temp = GetDaChon(txtTen.Text);
+                    temp = dgvThongtin.Rows.Add();
+
+                    capNhat(temp);
                     MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -57,7 +74,8 @@ namespace QuanLyChiTieu
             }
         }
 
-
+        public delegate void SendMessage(String value);
+        public delegate void PassDataDelegate(string cellValue);
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -70,7 +88,7 @@ namespace QuanLyChiTieu
 
         private void fThemChiTieu_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnxoainfo_Click(object sender, EventArgs e)
@@ -97,6 +115,11 @@ namespace QuanLyChiTieu
         }
 
         private void txtTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSL_TextChanged(object sender, EventArgs e)
         {
 
         }

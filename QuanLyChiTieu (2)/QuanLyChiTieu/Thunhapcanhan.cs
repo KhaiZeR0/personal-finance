@@ -10,15 +10,9 @@ namespace QuanLyChiTieu
      {
         private string _SoTien;
         private string _GhiChu;
-        private double _TongSoTienThuNhap;
 
        
         public string SoTien { get => _SoTien; set => _SoTien = value; }
         public string GhiChu { get => _GhiChu; set => _GhiChu = value; }
-        public double TongSoTienThuNhap { get => _TongSoTienThuNhap; set => _TongSoTienThuNhap = value; }
-
-        
-
-
     }
 }

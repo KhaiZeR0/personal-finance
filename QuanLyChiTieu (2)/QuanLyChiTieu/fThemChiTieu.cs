@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -9,83 +10,106 @@ namespace QuanLyChiTieu
 {
     public partial class fThemChiTieu : Form
     {
+        List<ChiTieuCaNhan> chiTieuList = new List<ChiTieuCaNhan>();
         public fThemChiTieu()
         {
             InitializeComponent();
         }
-        private void capNhat(int selectedRow)
-        {
-            dgvThongtin.Rows[selectedRow].Cells[0].Value = txtTen.Text;
-            dgvThongtin.Rows[selectedRow].Cells[1].Value = txtTien.Text;
-            dgvThongtin.Rows[selectedRow].Cells[2].Value = txtDM.Text;
-            dgvThongtin.Rows[selectedRow].Cells[3].Value = txtSL.Text;
-            dgvThongtin.Rows[selectedRow].Cells[4].Value = txtGC.Text;
-        }
+        
         
         private void dgvThongtin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        private int GetDaChon(string colTen)
-        {
-            for (int i = 0; i < dgvThongtin.Rows.Count; i++)
-            {
-                if (dgvThongtin.Rows[i].Cells[0].Value.ToString().Contains(colTen))
-                {
-                    return i;
-                }
-            }
-            return -1;
-        }
 
+        private void DisplayData()
+        {
+            dgvThongtin.DataSource = null;
+            dgvThongtin.DataSource = chiTieuList;
+
+            dgvThongtin.Columns["TenChiTieu"].HeaderText = "Tên chi tiêu";
+            dgvThongtin.Columns["DMCT"].HeaderText = "Danh mục";
+            dgvThongtin.Columns["SoTien"].HeaderText = "Số Tiền";
+            dgvThongtin.Columns["SL"].HeaderText = "Số lượng";
+            dgvThongtin.Columns["GhiChu"].HeaderText = "Ghi Chú";
+
+        }
         private void btnsave_Click(object sender, EventArgs e)
         {
             try
             {
-                if ( txtTien.Text == "" )
+                if (txtDM.Text == "")
                 {
-                    MessageBox.Show("Vui lòng không để trống số tiền","Thông báo");
+                    MessageBox.Show("Vui lòng không bỏ trống danh mục!", "Thông Báo!");
+                    return;
                 }
-                /*int tenTrung = GetDaChon(txtTen.Text);*/
-                else if (txtDM.Text == "")
+                else if (txtTien.Text == "")
                 {
-                    MessageBox.Show("Vui lòng không để trống danh mục chi tiêu", "Thông báo");
-
+                    MessageBox.Show("Vui lòng không bỏ trống số tiền!", "Thông Báo!");
+                    return;
                 }
                 else if (txtSL.Text == "")
                 {
-                    MessageBox.Show("Vui lòng không để trống số lượng", "Thông báo");
-
+                    MessageBox.Show("Vui lòng không bỏ trống số lượng!", "Thông Báo!");
+                    return;
                 }
-                else
+                try
                 {
-                    int temp = GetDaChon(txtTen.Text);
-                    temp = dgvThongtin.Rows.Add();
-
-                    capNhat(temp);
-                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int.Parse(txtTien.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Vui lòng không nhập ký tự vào số tiền!", "Thông Báo!");
+                    return;
                 }
 
+                int SL = int.Parse(txtSL.Text);
+                double Cost = double.Parse(txtTien.Text);
+                Cost = Cost * SL;
+
+                ChiTieuCaNhan chiTieu = new ChiTieuCaNhan();
+
+
+
+
+                chiTieu.TenChiTieu = txtTen.Text;
+
+                chiTieu.DMCT = txtDM.Text;
+
+                chiTieu.SoTien = Cost.ToString();
+
+                chiTieu.SL = txtSL.Text;
+
+                chiTieu.GhiChu = txtGC.Text;
+
+                chiTieuList.Add(chiTieu);
+
+                DisplayData();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi: " + ex.ToString());
             }
         }
-
-        public delegate void SendMessage(String value);
-        public delegate void PassDataDelegate(string cellValue);
+        //chưa hoàn thiện
+        public double sumCost()
+        {
+            ChiTieuCaNhan chiTieu = new ChiTieuCaNhan();
+            
+            int SL = int.Parse(txtSL.Text);
+            double Cost = double.Parse(txtTien.Text);
+            Cost = Cost * SL;
+            
+            double sumCost = double.Parse(chiTieu.SoTien);
+            
+            return 0;
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void fThemChiTieu_Load(object sender, EventArgs e)
         {
            
@@ -120,6 +144,11 @@ namespace QuanLyChiTieu
         }
 
         private void txtSL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvThongtin_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

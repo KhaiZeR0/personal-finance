@@ -414,6 +414,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTieuCaNhan.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="fBangQuanLy.cs">
       <SubType>Form</SubType>

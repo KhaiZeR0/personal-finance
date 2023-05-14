@@ -116,6 +116,7 @@
             this.btnlayma.TabIndex = 7;
             this.btnlayma.Text = "Lấy Mã";
             this.btnlayma.UseVisualStyleBackColor = true;
+            this.btnlayma.Click += new System.EventHandler(this.btnlayma_Click_1);
             // 
             // textBox2
             // 

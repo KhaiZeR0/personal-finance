@@ -12,6 +12,7 @@ using System.Web.Services.Description;
 using System.Windows.Forms;
 using System.Net.Mail;
 
+
 namespace QuanLyChiTieu
 {
     public partial class fQuenMatKhau : Form
@@ -23,7 +24,31 @@ namespace QuanLyChiTieu
             InitializeComponent();
         }
 
-        private void btnlayma_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (randomcode == (textBox2.Text).ToString())
+            {
+                to = textBox1.Text;
+                fResetPass fResetPass = new fResetPass();
+                fResetPass.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai mã, vui lòng nhập lại.");
+            }
+        }
+
+        private void fQuenMatKhau_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnlayma_Click_1(object sender, EventArgs e)
         {
 
             // send code
@@ -54,30 +79,6 @@ namespace QuanLyChiTieu
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (randomcode == (textBox2.Text).ToString())
-            {
-                to = textBox1.Text;
-                fResetPass fResetPass = new fResetPass();
-                fResetPass.Show();
-            }
-            else
-            {
-                MessageBox.Show("Sai mã, vui lòng nhập lại.");
-            }
-        }
-
-        private void fQuenMatKhau_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

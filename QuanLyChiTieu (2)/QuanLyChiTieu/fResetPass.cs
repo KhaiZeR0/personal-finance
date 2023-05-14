@@ -26,7 +26,19 @@ namespace QuanLyChiTieu
         }
         Modify modify = new Modify();
 
-        private void button1_Click(object sender, EventArgs e)
+        private static string GenerateHash(string toHash)
+        {
+            var crypt = new SHA256Managed();
+            string hash = String.Empty;
+            byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
+            foreach (byte theByte in crypto)
+            {
+                hash += theByte.ToString("x2");
+            }
+            return hash;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             string password = textBox2.Text;
             if (textBox1.Text == textBox2.Text)
@@ -44,17 +56,6 @@ namespace QuanLyChiTieu
             {
                 MessageBox.Show("Mật Khẩu bạn nhập không khớp, vui lòng nhập lại.");
             }
-        }
-        private static string GenerateHash(string toHash)
-        {
-            var crypt = new SHA256Managed();
-            string hash = String.Empty;
-            byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(toHash));
-            foreach (byte theByte in crypto)
-            {
-                hash += theByte.ToString("x2");
-            }
-            return hash;
         }
     }
 }

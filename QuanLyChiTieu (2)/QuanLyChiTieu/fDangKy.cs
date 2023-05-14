@@ -67,5 +67,10 @@ namespace QuanLyChiTieu
             }
             return hash;
         }
+
+        private void fDangKy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

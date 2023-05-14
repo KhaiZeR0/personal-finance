@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using static System.Net.Mime.MediaTypeNames;
+using System.Data.SqlClient;
 
 namespace QuanLyChiTieu
 {
     public partial class fResetPass : Form
     {
-        string emaildt = fQuenMatKhau.to;
+        string emailGO = fQuenMatKhau.to;
         public fResetPass()
         {
             InitializeComponent();
@@ -40,22 +42,25 @@ namespace QuanLyChiTieu
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string password = textBox2.Text;
-            if (textBox1.Text == textBox2.Text)
-            {
-                string matkhau = textBox1.Text;
-                string email = emaildt;
-                string passHash = GenerateHash(matkhau);
 
-                string query = "update [regtable] set [Password]='" + passHash + "' where Email='" + email + "'";
-                modify.Command(query);
-                MessageBox.Show("Bạn đã đổi mật khẩu thành thông, vui lòng chuyển sang trang đăng nhập.", "Thông báo!");
+            string matkhau = textBox2.Text;
+            string email = emailGO;
+
+            if (textBox1.Text == textBox2.Text) { }
+
+            try
+            {
+                string passHash = GenerateHash(matkhau);
+                string sql = "UPDATE Taikhoan SET MatKhau = @passHash WHERE Email_TK = @email";
+                modify.Command(sql);
+                MessageBox.Show("mật khẩu đã được cập nhật.", "Thông báo!");
                 this.Close();
             }
-            else
+            catch
             {
-                MessageBox.Show("Mật Khẩu bạn nhập không khớp, vui lòng nhập lại.");
+                MessageBox.Show("Cập nhật mật khẩu thất bại, vui lòng thử lại sau.");
             }
+
         }
     }
 }

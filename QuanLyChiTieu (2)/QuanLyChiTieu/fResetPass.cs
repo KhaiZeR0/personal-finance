@@ -51,7 +51,7 @@ namespace QuanLyChiTieu
             try
             {
                 string passHash = GenerateHash(matkhau);
-                string sql = "UPDATE Taikhoan SET MatKhau = @passHash WHERE Email_TK = @email";
+                string sql = "UPDATE Taikhoan SET MatKhau =" +passHash + "WHERE Email_TK =" + email;
                 modify.Command(sql);
                 MessageBox.Show("mật khẩu đã được cập nhật.", "Thông báo!");
                 this.Close();

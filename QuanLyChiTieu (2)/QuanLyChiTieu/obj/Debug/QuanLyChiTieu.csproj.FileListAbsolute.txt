@@ -357,9 +357,6 @@ C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.CopyComplete
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.pdb
-C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSetting.resources
-C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
-C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe.config
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.exe
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\QuanLyChiTieu.pdb
@@ -699,3 +696,7 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\Quan
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Web.Services.Description.pdb
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fthunhap.resources
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Groupinfo.resources
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
+C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache

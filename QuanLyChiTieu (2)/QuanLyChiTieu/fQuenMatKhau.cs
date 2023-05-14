@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
-using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace QuanLyChiTieu
 {
@@ -31,16 +33,17 @@ namespace QuanLyChiTieu
             MailMessage message = new MailMessage();
             to = (textBox1.Text).ToString();
             from = "khai.sendmail@gmail.com";
-            pass = "xsjayaiphjedablr";
+            pass = "bfsjnqexelavxnhi";
             messagebody = $"Mã của bạn là: {randomcode}";
             message.To.Add(to);
             message.From = new MailAddress(from);
             message.Body = messagebody;
             message.Subject = "Mã lấy lại mật khẩu";
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.EnableSsl = true;
             smtp.Port = 587;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
             smtp.Credentials = new NetworkCredential(from, pass);
             try
             {

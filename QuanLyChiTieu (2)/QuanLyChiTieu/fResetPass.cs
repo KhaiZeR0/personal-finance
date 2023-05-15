@@ -44,23 +44,26 @@ namespace QuanLyChiTieu
         {
 
             string matkhau = textBox2.Text;
+            string xnmk = textBox1.Text;
             string email = emailGO;
 
-            if (textBox1.Text == textBox2.Text) { }
+            if (xnmk != matkhau) { MessageBox.Show("Xác nhận mật khẩu không trùng khớp!"); return; }
 
-            try
+            else
             {
-                string passHash = GenerateHash(matkhau);
-                string sql = "UPDATE Taikhoan SET MatKhau =" +passHash + "WHERE Email_TK =" + email;
-                modify.Command(sql);
-                MessageBox.Show("mật khẩu đã được cập nhật.", "Thông báo!");
-                this.Close();
+                try
+                {
+                    string passHash = GenerateHash(matkhau);
+                    string sql = "UPDATE Taikhoan SET MatKhau = '" + passHash + "' WHERE Email_TK ='" + email +"'";
+                    modify.Command(sql);
+                    MessageBox.Show("mật khẩu đã được cập nhật.", "Thông báo!");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Cập nhật mật khẩu thất bại, vui lòng thử lại sau.");
+                }
             }
-            catch
-            {
-                MessageBox.Show("Cập nhật mật khẩu thất bại, vui lòng thử lại sau.");
-            }
-
         }
     }
 }

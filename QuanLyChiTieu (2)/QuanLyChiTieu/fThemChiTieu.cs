@@ -71,7 +71,6 @@ namespace QuanLyChiTieu
 
 
 
-
                 chiTieu.TenChiTieu = txtTen.Text;
 
                 chiTieu.DMCT = txtDM.Text;
@@ -105,6 +104,30 @@ namespace QuanLyChiTieu
             
             return 0;
         }
+        private void btnxoainfo_Click(object sender, EventArgs e)
+        {
+           
+            if (dgvThongtin.CurrentRow != null)
+            {
+                int selectedIndex = dgvThongtin.CurrentRow.Index;
+                chiTieuList.RemoveAt(selectedIndex);
+                DisplayData();
+            }
+        }
+
+        private void btndeldanhmuc_Click(object sender, EventArgs e)
+        {
+            if (txtDM.SelectedItem != null)
+            {
+                   string selectedDanhMuc = txtDM.SelectedItem.ToString();
+                   txtDM.Items.Remove(selectedDanhMuc);
+            }
+        }
+
+        private void btnadddanhmuc_Click(object sender, EventArgs e)
+        {
+            txtDM.Items.Add(txtDM.Text);
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -115,23 +138,7 @@ namespace QuanLyChiTieu
            
         }
 
-        private void btnxoainfo_Click(object sender, EventArgs e)
-        {
-            if (dgvThongtin.CurrentRow != null)
-            {
-                dgvThongtin.Rows.Remove(dgvThongtin.CurrentRow);
-            }
-        }
-
-        private void btndeldanhmuc_Click(object sender, EventArgs e)
-        {
-            txtDM.Items.RemoveAt(0);
-        }
-
-        private void btnadddanhmuc_Click(object sender, EventArgs e)
-        {
-            txtDM.Items.Add(txtDM.Text);
-        }
+        
 
         private void txtGC_TextChanged(object sender, EventArgs e)
         {

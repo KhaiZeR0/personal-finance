@@ -49,7 +49,7 @@ namespace QuanLyChiTieu
             {
                 if ( txtThuNhap.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập đủ thông tin!", "Thông Báo!");
+                    MessageBox.Show("Vui lòng không bỏ trống số tiền!", "Thông Báo!");
                     return;
                 }
 

@@ -694,9 +694,9 @@ C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\Quan
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Primitives.pdb
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Security.pdb
 C:\Users\ADMIN\OneDrive\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Web.Services.Description.pdb
-C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
-C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fthunhap.resources
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Groupinfo.resources
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
+C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache

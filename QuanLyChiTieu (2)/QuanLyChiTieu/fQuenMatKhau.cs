@@ -36,6 +36,7 @@ namespace QuanLyChiTieu
                 to = textBox1.Text;
                 fResetPass fResetPass = new fResetPass();
                 fResetPass.Show();
+                this.Close();
             }
             else
             {

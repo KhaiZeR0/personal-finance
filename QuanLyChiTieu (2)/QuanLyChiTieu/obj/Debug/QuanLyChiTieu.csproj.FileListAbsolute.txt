@@ -175,7 +175,6 @@ C:\Users\khai\Desktop\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.ex
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Text.Encoding.CodePages.xml
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Threading.AccessControl.xml
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.AssemblyReference.cache
-\\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.SuggestedBindingRedirects.cache
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.exe.config
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fQuanLyChiTieu.resources
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fDangNhap.resources
@@ -523,7 +522,6 @@ C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\Qua
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Primitives.pdb
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.ServiceModel.Security.pdb
 C:\Users\Admin\OneDrive\Documents\ĐỒ ÁN CUỐI KÌ CSLT\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\bin\Debug\System.Web.Services.Description.pdb
-\\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fSetting.resources
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 \\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fthunhap.resources
@@ -700,3 +698,5 @@ C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\
 C:\Users\khai\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.CopyLocal.cache
 C:\Users\0392956804\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.csproj.Fody.RuntimeCopyLocal.cache
+\\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.fthunhap.resources
+\\Mac\Home\Documents\GitHub\personal-finance\QuanLyChiTieu (2)\QuanLyChiTieu\obj\Debug\QuanLyChiTieu.Groupinfo.resources

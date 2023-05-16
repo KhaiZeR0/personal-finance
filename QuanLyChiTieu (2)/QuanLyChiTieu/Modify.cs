@@ -62,6 +62,5 @@ namespace QuanLyChiTieu
                 sqlCommand.ExecuteNonQuery();
             }
         }
-       
     }
 }

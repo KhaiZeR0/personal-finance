@@ -28,22 +28,16 @@ namespace QuanLyChiTieu
         }
         private void fThemChiTieu_Load(object sender, EventArgs e)
         {
+            ReloadData();
+        }
+
+        private void ReloadData()
+        {
             string query = "SELECT ChiTieu.TenCT, ChiTieu.DMCT, ChiTieu.SoTien, ChiTieu.SoLuong, ChiTieu.GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE ChiTieu.MaCT = TaiKhoan.MaTK";
             DataTable dataTable = modify.GetData(query);
             dgvThongtin.DataSource = dataTable;
         }
 
-
-        private void DisplayData()
-        {
-
-            dgvThongtin.Columns["TenChiTieu"].HeaderText = "Tên chi tiêu";
-            dgvThongtin.Columns["DMCT"].HeaderText = "Danh mục";
-            dgvThongtin.Columns["SoTien"].HeaderText = "Số Tiền";
-            dgvThongtin.Columns["SL"].HeaderText = "Số lượng";
-            dgvThongtin.Columns["GhiChu"].HeaderText = "Ghi Chú";
-
-        }
         private void btnsave_Click(object sender, EventArgs e)
         {
             try
@@ -63,58 +57,52 @@ namespace QuanLyChiTieu
                     MessageBox.Show("Vui lòng không bỏ trống số lượng!", "Thông Báo!");
                     return;
                 }
-                /*try
-                {
-                    int.Parse(txtTien.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Vui lòng không nhập ký tự vào số tiền!", "Thông Báo!");
-                    return;
-                }*/
 
                 int SL = int.Parse(txtSL.Text);
                 float Cost = float.Parse(txtTien.Text);
                 Cost = Cost * SL;
 
                 string tenCT = txtTen.Text;
-                string DMCT = txtDM.Text;
-                float Sotien = Cost;
+                var DMCT = txtDM.Text;
+                double Sotien = Cost;
                 string SoLG = txtSL.Text;
                 string Note = txtGC.Text;
 
                 string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu) SELECT MaTK, '" + tenCT + "', '" + DMCT + "', '" + Sotien + "', '" + SoLG + "', '" + Note + "' FROM TaiKhoan";
                 modify.Command(query);
-                
+                ReloadData();
             }   
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.ToString());
             }
         }
-        //chưa hoàn thiện
-        public double sumCost()
-        {
-            ChiTieuCaNhan chiTieu = new ChiTieuCaNhan();
-            
-            int SL = int.Parse(txtSL.Text);
-            double Cost = double.Parse(txtTien.Text);
-            Cost = Cost * SL;
-            
-            double sumCost = double.Parse(chiTieu.SoTien);
-            
-            return 0;
-        }
         private void btnxoainfo_Click(object sender, EventArgs e)
         {
-           
-           /* if (dgvThongtin.CurrentRow != null)
+            try
             {
-                int selectedIndex = dgvThongtin.CurrentRow.Index;
-                chiTieuList.RemoveAt(selectedIndex);
-                DisplayData();
-            }*/
+                if (dgvThongtin.SelectedRows.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa chi tiêu đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        foreach (DataGridViewRow row in dgvThongtin.SelectedRows)
+                        {
+                            int stt = Convert.ToInt32(row.Cells["STT_CT"].Value);
+                            string query = "DELETE FROM ChiTieu WHERE STT_CT = '" + stt + "'";
+                            modify.Command(query);
+                        }
+                        ReloadData();
+                    }
+                }
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn dữ liệu để xóa!", "Thông báo");
+            }
         }
+
 
         private void btndeldanhmuc_Click(object sender, EventArgs e)
         {

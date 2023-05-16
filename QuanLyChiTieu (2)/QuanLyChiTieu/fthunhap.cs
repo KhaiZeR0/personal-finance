@@ -47,19 +47,9 @@ namespace QuanLyChiTieu
         {
             try
             {
-                if ( txtThuNhap.Text == "")
+                if (txtThuNhap.Text == "")
                 {
                     MessageBox.Show("Vui lòng không bỏ trống số tiền!", "Thông Báo!");
-                    return;
-                }
-
-                try
-                {
-                    int.Parse(txtThuNhap.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Vui lòng nhập Số Tiền là số!", "Thông Báo!");
                     return;
                 }
 

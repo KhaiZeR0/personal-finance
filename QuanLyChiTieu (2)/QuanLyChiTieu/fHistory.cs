@@ -25,7 +25,7 @@ namespace QuanLyChiTieu
                 DateTime fromDate = dtFromDate.Value;
                 DateTime toDate = dtToDate.Value;
 
-                using (SqlConnection connection = Connection.GetConnection())
+                using (SqlConnection connection = Connection.GetSqlConnection())
                 {
                     string query = "SELECT TenCT, SoTien, DMCT, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE NgayChi BETWEEN @FromDate AND @ToDate";
 

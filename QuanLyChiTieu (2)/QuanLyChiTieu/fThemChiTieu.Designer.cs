@@ -69,7 +69,7 @@
             this.bunifuPanel1.Controls.Add(this.btnxoainfo);
             this.bunifuPanel1.Controls.Add(this.label2);
             this.bunifuPanel1.Location = new System.Drawing.Point(359, 15);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(891, 642);
@@ -91,7 +91,7 @@
             // 
             this.btnxoainfo.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoainfo.Location = new System.Drawing.Point(380, 549);
-            this.btnxoainfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnxoainfo.Margin = new System.Windows.Forms.Padding(4);
             this.btnxoainfo.Name = "btnxoainfo";
             this.btnxoainfo.Size = new System.Drawing.Size(155, 57);
             this.btnxoainfo.TabIndex = 11;
@@ -134,7 +134,7 @@
             this.bunifuPanel7.Controls.Add(this.txtTen);
             this.bunifuPanel7.Controls.Add(this.label11);
             this.bunifuPanel7.Location = new System.Drawing.Point(16, 15);
-            this.bunifuPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPanel7.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel7.Name = "bunifuPanel7";
             this.bunifuPanel7.ShowBorders = true;
             this.bunifuPanel7.Size = new System.Drawing.Size(335, 642);
@@ -143,7 +143,7 @@
             // txtSL
             // 
             this.txtSL.Location = new System.Drawing.Point(33, 229);
-            this.txtSL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSL.Margin = new System.Windows.Forms.Padding(4);
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(268, 22);
             this.txtSL.TabIndex = 3;
@@ -165,7 +165,7 @@
             // 
             this.btndeldanhmuc.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndeldanhmuc.Location = new System.Drawing.Point(184, 352);
-            this.btndeldanhmuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btndeldanhmuc.Margin = new System.Windows.Forms.Padding(4);
             this.btndeldanhmuc.Name = "btndeldanhmuc";
             this.btndeldanhmuc.Size = new System.Drawing.Size(119, 39);
             this.btndeldanhmuc.TabIndex = 8;
@@ -184,7 +184,7 @@
             this.bunifuPanel2.Controls.Add(this.dataGridView3);
             this.bunifuPanel2.Controls.Add(this.label6);
             this.bunifuPanel2.Location = new System.Drawing.Point(339, 252);
-            this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel2.Name = "bunifuPanel2";
             this.bunifuPanel2.ShowBorders = true;
             this.bunifuPanel2.Size = new System.Drawing.Size(496, 706);
@@ -194,7 +194,7 @@
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(37, 66);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.Size = new System.Drawing.Size(415, 300);
@@ -216,7 +216,7 @@
             // 
             this.btnadddanhmuc.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadddanhmuc.Location = new System.Drawing.Point(33, 352);
-            this.btnadddanhmuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnadddanhmuc.Margin = new System.Windows.Forms.Padding(4);
             this.btnadddanhmuc.Name = "btnadddanhmuc";
             this.btnadddanhmuc.Size = new System.Drawing.Size(143, 39);
             this.btnadddanhmuc.TabIndex = 7;
@@ -233,7 +233,7 @@
             "Đi lại",
             "Du thuyền"});
             this.txtDM.Location = new System.Drawing.Point(33, 319);
-            this.txtDM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDM.Margin = new System.Windows.Forms.Padding(4);
             this.txtDM.Name = "txtDM";
             this.txtDM.Size = new System.Drawing.Size(268, 24);
             this.txtDM.TabIndex = 4;
@@ -241,7 +241,7 @@
             // txtGC
             // 
             this.txtGC.Location = new System.Drawing.Point(33, 443);
-            this.txtGC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGC.Margin = new System.Windows.Forms.Padding(4);
             this.txtGC.Multiline = true;
             this.txtGC.Name = "txtGC";
             this.txtGC.Size = new System.Drawing.Size(268, 80);
@@ -263,7 +263,7 @@
             // txtTien
             // 
             this.txtTien.Location = new System.Drawing.Point(33, 150);
-            this.txtTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTien.Name = "txtTien";
             this.txtTien.Size = new System.Drawing.Size(268, 22);
             this.txtTien.TabIndex = 2;
@@ -285,7 +285,7 @@
             // 
             this.btnsave.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.Location = new System.Drawing.Point(53, 549);
-            this.btnsave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnsave.Margin = new System.Windows.Forms.Padding(4);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(229, 57);
             this.btnsave.TabIndex = 6;
@@ -308,7 +308,7 @@
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(33, 78);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(268, 22);
             this.txtTen.TabIndex = 1;
@@ -333,7 +333,7 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.bunifuPanel7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fThemChiTieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Chi Tiêu";

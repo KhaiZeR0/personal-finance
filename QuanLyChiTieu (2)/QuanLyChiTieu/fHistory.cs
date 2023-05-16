@@ -50,15 +50,6 @@ namespace QuanLyChiTieu
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static class Connection
-        {
-            public static SqlConnection GetConnection()
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["Connection.cs"].ConnectionString;
-                SqlConnection connection = new SqlConnection(connectionString);
-                return connection;
-            }
-        }
     }
 
 }

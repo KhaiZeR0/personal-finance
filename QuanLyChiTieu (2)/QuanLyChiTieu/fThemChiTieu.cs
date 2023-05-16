@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyChiTieu
 {
     public partial class fThemChiTieu : Form
     {
         List<ChiTieuCaNhan> chiTieuList = new List<ChiTieuCaNhan>();
+        Modify modify = new Modify();
         public fThemChiTieu()
         {
             InitializeComponent();
@@ -21,6 +24,7 @@ namespace QuanLyChiTieu
         {
 
         }
+
 
         private void DisplayData()
         {
@@ -55,7 +59,7 @@ namespace QuanLyChiTieu
                 }
                 try
                 {
-                    int.Parse(txtTien.Text);
+                    double.Parse(txtTien.Text);
                 }
                 catch (Exception ex)
                 {
@@ -66,6 +70,14 @@ namespace QuanLyChiTieu
                 int SL = int.Parse(txtSL.Text);
                 double Cost = double.Parse(txtTien.Text);
                 Cost = Cost * SL;
+
+                string tenCT = txtTen.Text;
+                string DMCT = txtDM.Text;
+                string Sotien = Cost.ToString();
+                string SoLG = txtSL.Text;
+                string Note = txtGC.Text;
+
+                string query = "insert into TaiKhoan values ('" + tenCT + "','" +  + "','" + email + "')";
 
                 ChiTieuCaNhan chiTieu = new ChiTieuCaNhan();
 

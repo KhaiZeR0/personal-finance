@@ -18,32 +18,48 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                using(SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn"].ConnectionString))
+                DateTime fromDate = dtFromDate.Value;
+                DateTime toDate = dtToDate.Value;
+
+                using (SqlConnection connection = Connection.GetConnection())
                 {
-                    if (cn.State == ConnectionState.Closed)
-                        cn.Open();
-                    using (DataTable dt = new DataTable("Order"))
+                    string query = "SELECT TenCT, SoTien, DMCT, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE NgayChi BETWEEN @FromDate AND @ToDate";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM ChiTieu WHERE NgayChi >= dtFromDate AND NgayChi <= dtToDate", cn))
+                        command.Parameters.AddWithValue("@FromDate", fromDate);
+                        command.Parameters.AddWithValue("@ToDate", toDate);
+
+                        connection.Open();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
-                            cmd.Parameters.AddWithValue("@Ngaychi", dtFromDate.Value);
-                            cmd.Parameters.AddWithValue("@Ngaychi", dtToDate.Value);
-                            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-                            sqlDataAdapter.Fill(dt);
-                            GridView.DataSource = dt;
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            GridView.DataSource = dataTable;
                         }
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Messenger",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public static class Connection
+        {
+            public static SqlConnection GetConnection()
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["Connection.cs"].ConnectionString;
+                SqlConnection connection = new SqlConnection(connectionString);
+                return connection;
             }
         }
     }
+
 }
+

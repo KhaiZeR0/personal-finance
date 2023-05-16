@@ -14,6 +14,6 @@ namespace QuanLyChiTieu
         {
             return new SqlConnection(stringConnection);
         }
-     }
+    }
 
 }

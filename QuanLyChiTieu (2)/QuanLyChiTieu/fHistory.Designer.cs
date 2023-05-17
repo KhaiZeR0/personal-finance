@@ -34,20 +34,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHistory));
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bunifuPanel7 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.GridView = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtFromDate = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.dtToDate = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.GridView = new System.Windows.Forms.DataGridView();
+            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtToDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.bunifuPanel7.SuspendLayout();
-            this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
+            this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
@@ -82,6 +82,14 @@
             this.bunifuPanel7.Size = new System.Drawing.Size(602, 441);
             this.bunifuPanel7.TabIndex = 5;
             // 
+            // GridView
+            // 
+            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Location = new System.Drawing.Point(23, 54);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(573, 375);
+            this.GridView.TabIndex = 4;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -93,54 +101,6 @@
             this.label11.TabIndex = 3;
             this.label11.Text = "Lịch sử chi tiêu theo mốc thời gian";
             // 
-            // dtFromDate
-            // 
-            this.dtFromDate.BackColor = System.Drawing.Color.Transparent;
-            this.dtFromDate.BorderRadius = 1;
-            this.dtFromDate.Color = System.Drawing.Color.Silver;
-            this.dtFromDate.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.dtFromDate.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.dtFromDate.DisabledColor = System.Drawing.Color.Gray;
-            this.dtFromDate.DisplayWeekNumbers = false;
-            this.dtFromDate.DPHeight = 0;
-            this.dtFromDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtFromDate.FillDatePicker = false;
-            this.dtFromDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtFromDate.ForeColor = System.Drawing.Color.Black;
-            this.dtFromDate.Icon = ((System.Drawing.Image)(resources.GetObject("dtFromDate.Icon")));
-            this.dtFromDate.IconColor = System.Drawing.Color.Gray;
-            this.dtFromDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dtFromDate.LeftTextMargin = 5;
-            this.dtFromDate.Location = new System.Drawing.Point(82, 51);
-            this.dtFromDate.MinimumSize = new System.Drawing.Size(4, 32);
-            this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(213, 32);
-            this.dtFromDate.TabIndex = 6;
-            // 
-            // dtToDate
-            // 
-            this.dtToDate.BackColor = System.Drawing.Color.Transparent;
-            this.dtToDate.BorderRadius = 1;
-            this.dtToDate.Color = System.Drawing.Color.Silver;
-            this.dtToDate.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.dtToDate.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.dtToDate.DisabledColor = System.Drawing.Color.Gray;
-            this.dtToDate.DisplayWeekNumbers = false;
-            this.dtToDate.DPHeight = 0;
-            this.dtToDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtToDate.FillDatePicker = false;
-            this.dtToDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtToDate.ForeColor = System.Drawing.Color.Black;
-            this.dtToDate.Icon = ((System.Drawing.Image)(resources.GetObject("dtToDate.Icon")));
-            this.dtToDate.IconColor = System.Drawing.Color.Gray;
-            this.dtToDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.dtToDate.LeftTextMargin = 5;
-            this.dtToDate.Location = new System.Drawing.Point(82, 89);
-            this.dtToDate.MinimumSize = new System.Drawing.Size(4, 32);
-            this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(213, 32);
-            this.dtToDate.TabIndex = 7;
-            // 
             // bunifuPanel1
             // 
             this.bunifuPanel1.BackgroundColor = System.Drawing.Color.White;
@@ -149,13 +109,13 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 30;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.dtToDate);
+            this.bunifuPanel1.Controls.Add(this.dtFromDate);
             this.bunifuPanel1.Controls.Add(this.button1);
             this.bunifuPanel1.Controls.Add(this.label4);
             this.bunifuPanel1.Controls.Add(this.label3);
             this.bunifuPanel1.Controls.Add(this.label2);
-            this.bunifuPanel1.Controls.Add(this.dtFromDate);
             this.bunifuPanel1.Controls.Add(this.label1);
-            this.bunifuPanel1.Controls.Add(this.dtToDate);
             this.bunifuPanel1.Controls.Add(this.chart1);
             this.bunifuPanel1.Location = new System.Drawing.Point(12, 18);
             this.bunifuPanel1.Name = "bunifuPanel1";
@@ -217,13 +177,19 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Biểu đồ chi tiêu";
             // 
-            // GridView
+            // dtFromDate
             // 
-            this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView.Location = new System.Drawing.Point(23, 54);
-            this.GridView.Name = "GridView";
-            this.GridView.Size = new System.Drawing.Size(573, 375);
-            this.GridView.TabIndex = 4;
+            this.dtFromDate.Location = new System.Drawing.Point(84, 56);
+            this.dtFromDate.Name = "dtFromDate";
+            this.dtFromDate.Size = new System.Drawing.Size(200, 20);
+            this.dtFromDate.TabIndex = 11;
+            // 
+            // dtToDate
+            // 
+            this.dtToDate.Location = new System.Drawing.Point(84, 96);
+            this.dtToDate.Name = "dtToDate";
+            this.dtToDate.Size = new System.Drawing.Size(200, 20);
+            this.dtToDate.TabIndex = 12;
             // 
             // fHistory
             // 
@@ -241,9 +207,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.bunifuPanel7.ResumeLayout(false);
             this.bunifuPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,8 +218,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel7;
         private System.Windows.Forms.Label label11;
-        private Bunifu.UI.WinForms.BunifuDatePicker dtFromDate;
-        private Bunifu.UI.WinForms.BunifuDatePicker dtToDate;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -261,5 +225,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView GridView;
+        private System.Windows.Forms.DateTimePicker dtToDate;
+        private System.Windows.Forms.DateTimePicker dtFromDate;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace QuanLyChiTieu
 {
@@ -22,8 +23,10 @@ namespace QuanLyChiTieu
         {
             try
             {
-                DateTime fromDate = dtFromDate.Value;
-                DateTime toDate = dtToDate.Value;
+                DateTime ufromDate = dtFromDate.Value;
+                DateTime utoDate = dtToDate.Value;
+                string FromDate = ufromDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                string ToDate = utoDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
@@ -31,8 +34,8 @@ namespace QuanLyChiTieu
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@FromDate", fromDate);
-                        command.Parameters.AddWithValue("@ToDate", toDate);
+                        command.Parameters.AddWithValue("@FromDate", FromDate);
+                        command.Parameters.AddWithValue("@ToDate", ToDate);
 
                         connection.Open();
 

@@ -68,7 +68,10 @@ namespace QuanLyChiTieu
                 string SoLG = txtSL.Text;
                 string Note = txtGC.Text;
 
-                string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu) SELECT MaTK, '" + tenCT + "', '" + DMCT + "', '" + Sotien + "', '" + SoLG + "', '" + Note + "' FROM TaiKhoan";
+                DateTime currentDate = DateTime.Now;
+                string NgayChi = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
+
+                string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi) SELECT MaTK, '" + tenCT + "', '" + DMCT + "', '" + Sotien + "', '" + SoLG + "', '" + Note + "', '" + NgayChi + "' FROM TaiKhoan";
                 modify.Command(query);
                 ReloadData();
             }   

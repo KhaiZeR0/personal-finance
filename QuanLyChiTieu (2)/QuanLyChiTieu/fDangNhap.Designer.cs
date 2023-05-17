@@ -50,12 +50,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(378, 94);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 21);
+            this.label1.Size = new System.Drawing.Size(127, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
             // 
@@ -84,7 +84,7 @@
             this.btnDangNhap.AutoSize = true;
             this.btnDangNhap.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnDangNhap.FlatAppearance.BorderSize = 3;
-            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Location = new System.Drawing.Point(382, 288);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(366, 84);
@@ -99,11 +99,11 @@
             this.link_lblQuenMatKhau.AutoSize = true;
             this.link_lblQuenMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
             this.link_lblQuenMatKhau.DisabledLinkColor = System.Drawing.Color.White;
-            this.link_lblQuenMatKhau.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_lblQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_lblQuenMatKhau.LinkColor = System.Drawing.Color.White;
             this.link_lblQuenMatKhau.Location = new System.Drawing.Point(381, 251);
             this.link_lblQuenMatKhau.Name = "link_lblQuenMatKhau";
-            this.link_lblQuenMatKhau.Size = new System.Drawing.Size(109, 19);
+            this.link_lblQuenMatKhau.Size = new System.Drawing.Size(102, 17);
             this.link_lblQuenMatKhau.TabIndex = 5;
             this.link_lblQuenMatKhau.TabStop = true;
             this.link_lblQuenMatKhau.Text = "Quên mật khẩu?";
@@ -113,11 +113,11 @@
             // 
             this.link_lblDangKy.AutoSize = true;
             this.link_lblDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
-            this.link_lblDangKy.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_lblDangKy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_lblDangKy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.link_lblDangKy.Location = new System.Drawing.Point(511, 413);
             this.link_lblDangKy.Name = "link_lblDangKy";
-            this.link_lblDangKy.Size = new System.Drawing.Size(59, 19);
+            this.link_lblDangKy.Size = new System.Drawing.Size(55, 17);
             this.link_lblDangKy.TabIndex = 6;
             this.link_lblDangKy.TabStop = true;
             this.link_lblDangKy.Text = "Đăng ký";
@@ -127,11 +127,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Small", 20F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(379, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 36);
+            this.label3.Size = new System.Drawing.Size(90, 37);
             this.label3.TabIndex = 9;
             this.label3.Text = "LogIn";
             // 
@@ -139,12 +139,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(378, 186);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 21);
+            this.label4.Size = new System.Drawing.Size(87, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Mật Khẩu:";
             // 
@@ -152,12 +152,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(378, 413);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 19);
+            this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Chưa có tài khoản?";
             // 
@@ -165,7 +165,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(75)))), ((int)(((byte)(245)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(467, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(467, 15);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(37, 51);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

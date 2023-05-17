@@ -30,7 +30,7 @@ namespace QuanLyChiTieu
 
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
-                    string query = "SELECT TenCT, SoTien, DMCT, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE NgayChi BETWEEN @FromDate AND @ToDate";
+                    string query = "SELECT TenCT, SoTien, DMCT, NgayChi, GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE NgayChi BETWEEN @FromDate AND @ToDate";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

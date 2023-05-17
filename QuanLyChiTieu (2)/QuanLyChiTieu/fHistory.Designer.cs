@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHistory));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bunifuPanel7 = new Bunifu.UI.WinForms.BunifuPanel();
             this.GridView = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.dtToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
-            this.dtToDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.bunifuPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
@@ -52,16 +53,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 241);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(3, 222);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(359, 188);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -84,6 +85,14 @@
             // 
             // GridView
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView.Location = new System.Drawing.Point(23, 54);
             this.GridView.Name = "GridView";
@@ -94,10 +103,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(19, 24);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(330, 24);
+            this.label11.Size = new System.Drawing.Size(314, 25);
             this.label11.TabIndex = 3;
             this.label11.Text = "Lịch sử chi tiêu theo mốc thời gian";
             // 
@@ -123,9 +132,26 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(379, 441);
             this.bunifuPanel1.TabIndex = 6;
             // 
+            // dtToDate
+            // 
+            this.dtToDate.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtToDate.Location = new System.Drawing.Point(76, 87);
+            this.dtToDate.Name = "dtToDate";
+            this.dtToDate.Size = new System.Drawing.Size(200, 20);
+            this.dtToDate.TabIndex = 12;
+            // 
+            // dtFromDate
+            // 
+            this.dtFromDate.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFromDate.Location = new System.Drawing.Point(76, 54);
+            this.dtFromDate.Name = "dtFromDate";
+            this.dtFromDate.Size = new System.Drawing.Size(200, 20);
+            this.dtFromDate.TabIndex = 11;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 136);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(29, 113);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 38);
             this.button1.TabIndex = 10;
@@ -137,10 +163,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 24);
+            this.label4.Size = new System.Drawing.Size(186, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Chọn mốc thời gian";
             // 
@@ -148,10 +174,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 92);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 24);
+            this.label3.Size = new System.Drawing.Size(45, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Đến:";
             // 
@@ -159,10 +185,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 24);
+            this.label2.Size = new System.Drawing.Size(34, 21);
             this.label2.TabIndex = 8;
             this.label2.Text = "Từ:";
             // 
@@ -170,26 +196,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 214);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(149, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Biểu đồ chi tiêu";
-            // 
-            // dtFromDate
-            // 
-            this.dtFromDate.Location = new System.Drawing.Point(84, 56);
-            this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(200, 20);
-            this.dtFromDate.TabIndex = 11;
-            // 
-            // dtToDate
-            // 
-            this.dtToDate.Location = new System.Drawing.Point(84, 96);
-            this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(200, 20);
-            this.dtToDate.TabIndex = 12;
             // 
             // fHistory
             // 

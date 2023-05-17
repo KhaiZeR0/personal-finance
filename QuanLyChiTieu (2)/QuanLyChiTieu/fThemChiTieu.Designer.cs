@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemChiTieu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.dgvThongtin = new System.Windows.Forms.DataGridView();
             this.btnxoainfo = new System.Windows.Forms.Button();
@@ -68,32 +69,39 @@
             this.bunifuPanel1.Controls.Add(this.dgvThongtin);
             this.bunifuPanel1.Controls.Add(this.btnxoainfo);
             this.bunifuPanel1.Controls.Add(this.label2);
-            this.bunifuPanel1.Location = new System.Drawing.Point(359, 15);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel1.Location = new System.Drawing.Point(269, 12);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(891, 642);
+            this.bunifuPanel1.Size = new System.Drawing.Size(668, 522);
             this.bunifuPanel1.TabIndex = 6;
             // 
             // dgvThongtin
             // 
             this.dgvThongtin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongtin.Location = new System.Drawing.Point(33, 54);
+            this.dgvThongtin.Location = new System.Drawing.Point(25, 44);
+            this.dgvThongtin.Margin = new System.Windows.Forms.Padding(2);
             this.dgvThongtin.Name = "dgvThongtin";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThongtin.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThongtin.RowHeadersWidth = 51;
             this.dgvThongtin.RowTemplate.Height = 24;
             this.dgvThongtin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThongtin.Size = new System.Drawing.Size(836, 468);
+            this.dgvThongtin.Size = new System.Drawing.Size(627, 408);
             this.dgvThongtin.TabIndex = 12;
             this.dgvThongtin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongtin_CellContentClick_1);
             // 
             // btnxoainfo
             // 
-            this.btnxoainfo.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoainfo.Location = new System.Drawing.Point(380, 549);
-            this.btnxoainfo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnxoainfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoainfo.Location = new System.Drawing.Point(284, 457);
             this.btnxoainfo.Name = "btnxoainfo";
-            this.btnxoainfo.Size = new System.Drawing.Size(155, 57);
+            this.btnxoainfo.Size = new System.Drawing.Size(116, 46);
             this.btnxoainfo.TabIndex = 11;
             this.btnxoainfo.Text = "Xoá";
             this.btnxoainfo.UseVisualStyleBackColor = true;
@@ -103,11 +111,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 32);
+            this.label2.Size = new System.Drawing.Size(187, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Chỉnh sửa thông tin";
             // 
@@ -133,19 +140,18 @@
             this.bunifuPanel7.Controls.Add(this.label1);
             this.bunifuPanel7.Controls.Add(this.txtTen);
             this.bunifuPanel7.Controls.Add(this.label11);
-            this.bunifuPanel7.Location = new System.Drawing.Point(16, 15);
-            this.bunifuPanel7.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel7.Location = new System.Drawing.Point(12, 12);
             this.bunifuPanel7.Name = "bunifuPanel7";
             this.bunifuPanel7.ShowBorders = true;
-            this.bunifuPanel7.Size = new System.Drawing.Size(335, 642);
+            this.bunifuPanel7.Size = new System.Drawing.Size(251, 522);
             this.bunifuPanel7.TabIndex = 5;
             // 
             // txtSL
             // 
-            this.txtSL.Location = new System.Drawing.Point(33, 229);
-            this.txtSL.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSL.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSL.Location = new System.Drawing.Point(25, 186);
             this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(268, 22);
+            this.txtSL.Size = new System.Drawing.Size(202, 22);
             this.txtSL.TabIndex = 3;
             this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
             // 
@@ -153,21 +159,19 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 193);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(20, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 32);
+            this.label5.Size = new System.Drawing.Size(94, 25);
             this.label5.TabIndex = 11;
             this.label5.Text = "Số lượng";
             // 
             // btndeldanhmuc
             // 
-            this.btndeldanhmuc.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndeldanhmuc.Location = new System.Drawing.Point(184, 352);
-            this.btndeldanhmuc.Margin = new System.Windows.Forms.Padding(4);
+            this.btndeldanhmuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndeldanhmuc.Location = new System.Drawing.Point(138, 286);
             this.btndeldanhmuc.Name = "btndeldanhmuc";
-            this.btndeldanhmuc.Size = new System.Drawing.Size(119, 39);
+            this.btndeldanhmuc.Size = new System.Drawing.Size(89, 32);
             this.btndeldanhmuc.TabIndex = 8;
             this.btndeldanhmuc.Text = "Xoá";
             this.btndeldanhmuc.UseVisualStyleBackColor = true;
@@ -183,42 +187,38 @@
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.dataGridView3);
             this.bunifuPanel2.Controls.Add(this.label6);
-            this.bunifuPanel2.Location = new System.Drawing.Point(339, 252);
-            this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel2.Location = new System.Drawing.Point(254, 205);
             this.bunifuPanel2.Name = "bunifuPanel2";
             this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(496, 706);
+            this.bunifuPanel2.Size = new System.Drawing.Size(372, 574);
             this.bunifuPanel2.TabIndex = 7;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(37, 66);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView3.Location = new System.Drawing.Point(28, 54);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(415, 300);
+            this.dataGridView3.Size = new System.Drawing.Size(311, 244);
             this.dataGridView3.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 30);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(23, 24);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(237, 32);
+            this.label6.Size = new System.Drawing.Size(191, 24);
             this.label6.TabIndex = 5;
             this.label6.Text = "Chỉnh sửa thông tin";
             // 
             // btnadddanhmuc
             // 
-            this.btnadddanhmuc.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadddanhmuc.Location = new System.Drawing.Point(33, 352);
-            this.btnadddanhmuc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnadddanhmuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadddanhmuc.Location = new System.Drawing.Point(25, 286);
             this.btnadddanhmuc.Name = "btnadddanhmuc";
-            this.btnadddanhmuc.Size = new System.Drawing.Size(143, 39);
+            this.btnadddanhmuc.Size = new System.Drawing.Size(107, 32);
             this.btnadddanhmuc.TabIndex = 7;
             this.btnadddanhmuc.Text = "Thêm";
             this.btnadddanhmuc.UseVisualStyleBackColor = true;
@@ -226,25 +226,20 @@
             // 
             // txtDM
             // 
+            this.txtDM.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDM.FormattingEnabled = true;
-            this.txtDM.Items.AddRange(new object[] {
-            "Ăn uống",
-            "Trà sữa",
-            "Đi lại",
-            "Du thuyền"});
-            this.txtDM.Location = new System.Drawing.Point(33, 319);
-            this.txtDM.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDM.Location = new System.Drawing.Point(25, 259);
             this.txtDM.Name = "txtDM";
-            this.txtDM.Size = new System.Drawing.Size(268, 24);
+            this.txtDM.Size = new System.Drawing.Size(202, 21);
             this.txtDM.TabIndex = 4;
             // 
             // txtGC
             // 
-            this.txtGC.Location = new System.Drawing.Point(33, 443);
-            this.txtGC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGC.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGC.Location = new System.Drawing.Point(25, 360);
             this.txtGC.Multiline = true;
             this.txtGC.Name = "txtGC";
-            this.txtGC.Size = new System.Drawing.Size(268, 80);
+            this.txtGC.Size = new System.Drawing.Size(202, 66);
             this.txtGC.TabIndex = 5;
             this.txtGC.TextChanged += new System.EventHandler(this.txtGC_TextChanged);
             // 
@@ -252,20 +247,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 407);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 331);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 32);
+            this.label4.Size = new System.Drawing.Size(79, 25);
             this.label4.TabIndex = 9;
             this.label4.Text = "Ghi chú";
             // 
             // txtTien
             // 
-            this.txtTien.Location = new System.Drawing.Point(33, 150);
-            this.txtTien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTien.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTien.Location = new System.Drawing.Point(25, 122);
             this.txtTien.Name = "txtTien";
-            this.txtTien.Size = new System.Drawing.Size(268, 22);
+            this.txtTien.Size = new System.Drawing.Size(202, 22);
             this.txtTien.TabIndex = 2;
             this.txtTien.TextChanged += new System.EventHandler(this.txtTien_TextChanged);
             // 
@@ -273,21 +267,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 114);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 32);
+            this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Số Tiền";
             // 
             // btnsave
             // 
-            this.btnsave.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.Location = new System.Drawing.Point(53, 549);
-            this.btnsave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnsave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.Location = new System.Drawing.Point(40, 446);
             this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(229, 57);
+            this.btnsave.Size = new System.Drawing.Size(172, 46);
             this.btnsave.TabIndex = 6;
             this.btnsave.Text = "Lưu Lại";
             this.btnsave.UseVisualStyleBackColor = true;
@@ -297,43 +289,40 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 282);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 229);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 32);
+            this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Danh Mục";
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(33, 78);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTen.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Location = new System.Drawing.Point(25, 63);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(268, 22);
+            this.txtTen.Size = new System.Drawing.Size(202, 22);
             this.txtTen.TabIndex = 1;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 30);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(20, 24);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(266, 32);
+            this.label11.Size = new System.Drawing.Size(208, 25);
             this.label11.TabIndex = 3;
             this.label11.Text = "Tên Mặt hàng/Chi tiêu";
             // 
             // fThemChiTieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 672);
+            this.ClientSize = new System.Drawing.Size(946, 546);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.bunifuPanel7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fThemChiTieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Chi Tiêu";

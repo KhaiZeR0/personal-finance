@@ -51,7 +51,6 @@ namespace QuanLyChiTieu
 
         private void btnlayma_Click_1(object sender, EventArgs e)
         {
-
             // send code
             string from, pass, messagebody;
             Random rand = new Random();

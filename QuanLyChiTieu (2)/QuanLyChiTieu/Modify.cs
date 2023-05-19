@@ -32,10 +32,8 @@ namespace QuanLyChiTieu
                     TaiKhoan taiKhoan = new TaiKhoan(tenTaiKhoan, matKhau);
                     taiKhoans.Add(taiKhoan);
                 }
-
                 sqlDataReader.Close();
             }
-
             return taiKhoans;
         }
         public DataTable GetData(string query)

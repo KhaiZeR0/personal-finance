@@ -38,8 +38,6 @@ namespace QuanLyChiTieu
             dataTable.Clear();
             dataTable = modify.GetData(query);
             dgvThongtin.DataSource = dataTable;
-
-            // Ẩn cột "STT_CT"
             dgvThongtin.Columns["STT_CT"].Visible = false;
         }
 
@@ -64,7 +62,7 @@ namespace QuanLyChiTieu
                 }
 
                 int SL = int.Parse(txtSL.Text);
-                float Cost = float.Parse(txtTien.Text);
+                double Cost = double.Parse(txtTien.Text);
                 Cost = Cost * SL;
 
                 string tenCT = txtTen.Text;
@@ -120,6 +118,7 @@ namespace QuanLyChiTieu
         {
             txtDM.Items.Add(txtDM.Text);
         }
+        //cần fix lại thành xóa danh mục "được chọn"
         private void btndeldanhmuc_Click(object sender, EventArgs e)
         {
             if (txtDM.SelectedItem != null)

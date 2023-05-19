@@ -13,39 +13,25 @@ namespace QuanLyChiTieu
 {
     public partial class fthunhap : Form
     {
-        List<Thunhapcanhan> thuNhapList = new List<Thunhapcanhan>();
+        
         Modify modify = new Modify();
-        SqlDataAdapter adapter = new SqlDataAdapter();
         public fthunhap()
         {
             InitializeComponent();
         }
-
-        private void txtThuNhap_TextChanged(object sender, EventArgs e)
+        private void fthunhap_Load(object sender, EventArgs e)
         {
-
+            ReloadData();
         }
-
-        private void DisplayData()
+        private void ReloadData()
         {
-            dgvLichSuThuNhap.DataSource = null;
-            dgvLichSuThuNhap.DataSource = thuNhapList;
-
-            dgvLichSuThuNhap.Columns["GhiChu"].HeaderText = "Ghi Chú";
-            dgvLichSuThuNhap.Columns["SoTien"].HeaderText = "Số Tiền";
+            string query = "SELECT ThuNhap.STT_TN, ThuNhap.SoTien, ThuNhap.NgayThu, ThuNhap.GhiChu FROM ThuNhap INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ThuNhap.MaTN WHERE ThuNhap.MaTN = TaiKhoan.MaTK";
+            DataTable dataTable = new DataTable();
+            dataTable.Clear();
+            dataTable = modify.GetData(query);
+            dgvLichSuThuNhap.DataSource = dataTable;
+            dgvLichSuThuNhap.Columns["STT_TN"].Visible = false;
         }
-
-        private void btnSaveThuNhap_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void bunifuPanel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSaveThuNhap_Click_1(object sender, EventArgs e)
         {
             try
@@ -56,28 +42,21 @@ namespace QuanLyChiTieu
                     return;
                 }
 
-                Thunhapcanhan thuNhap = new Thunhapcanhan();
+                double Sotien = double.Parse(txtThuNhap.Text);
+                string Note = txtGhiChu.Text;
 
-                thuNhap.SoTien = txtThuNhap.Text;
+                DateTime currentDate = DateTime.Now;
+                string NgayThu = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
 
-                thuNhap.GhiChu = txtGhiChu.Text;
-
-                thuNhapList.Add(thuNhap);
-
-                DisplayData();
-
+                string query = "INSERT INTO ThuNhap (MaTN, SoTien, GhiChu, NgayThu) SELECT MaTK, '" + Sotien + "', N'" + Note + "', '" + NgayThu + "' FROM TaiKhoan";
+                modify.Command(query);
+                ReloadData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.ToString());
             }
         }
-
-        private void fthunhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnxoainfo_Click(object sender, EventArgs e)
         {
             if (dgvLichSuThuNhap.SelectedRows.Count > 0)
@@ -86,14 +65,14 @@ namespace QuanLyChiTieu
                 if (result == DialogResult.Yes)
                 {
                     int selectedRowIndex = dgvLichSuThuNhap.SelectedRows[0].Index;
-                    int sttCT = Convert.ToInt32(dgvLichSuThuNhap.Rows[selectedRowIndex].Cells["STT_CT"].Value);
+                    int sttTN = Convert.ToInt32(dgvLichSuThuNhap.Rows[selectedRowIndex].Cells["STT_TN"].Value);
 
-                    string deleteQuery = "DELETE FROM ChiTieu WHERE STT_CT = @STT_CT";
+                    string deleteQuery = "DELETE FROM ThuNhap WHERE STT_TN = @STT_TN";
                     using (SqlConnection connection = Connection.GetSqlConnection())
                     {
                         using (SqlCommand command = new SqlCommand(deleteQuery, connection))
                         {
-                            command.Parameters.AddWithValue("@STT_CT", sttCT);
+                            command.Parameters.AddWithValue("@STT_TN", sttTN);
                             connection.Open();
                             command.ExecuteNonQuery();
                             connection.Close();
@@ -108,16 +87,21 @@ namespace QuanLyChiTieu
                 MessageBox.Show("Vui lòng chọn dòng dữ liệu để xóa!", "Thông báo");
             }
         }
-        private void ReloadData()
+       
+        private void txtThuNhap_TextChanged(object sender, EventArgs e)
         {
-            string query = "SELECT ChiTieu.STT_CT, ChiTieu.TenCT, ChiTieu.DMCT, ChiTieu.SoTien, ChiTieu.SoLuong, ChiTieu.NgayChi, ChiTieu.GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE ChiTieu.MaCT = TaiKhoan.MaTK";
-            DataTable dataTable = new DataTable();
-            dataTable.Clear();
-            dataTable = modify.GetData(query);
-            dgvLichSuThuNhap.DataSource = dataTable;
 
-            // Ẩn cột "STT_CT"
-            dgvLichSuThuNhap.Columns["STT_CT"].Visible = false;
         }
+        private void btnSaveThuNhap_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void bunifuPanel4_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

@@ -53,6 +53,11 @@ namespace QuanLyChiTieu
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void fHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

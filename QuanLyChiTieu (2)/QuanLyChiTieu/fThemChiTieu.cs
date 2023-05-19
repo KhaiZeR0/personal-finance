@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -35,14 +37,10 @@ namespace QuanLyChiTieu
 
         private void ReloadData()
         {
-            
             string query = "SELECT ChiTieu.TenCT, ChiTieu.DMCT, ChiTieu.SoTien, ChiTieu.SoLuong, ChiTieu.GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE ChiTieu.MaCT = TaiKhoan.MaTK";
             /*DataTable dataTable = new DataTable();*/
             dataTable = modify.GetData(query);
             dgvThongtin.DataSource = dataTable;
-
-            // Ẩn cột "IdDelete"
-            dgvThongtin.Columns["IdDelete"].Visible = false;
 
         }
 
@@ -92,46 +90,25 @@ namespace QuanLyChiTieu
         }
         private void dgvThongtin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    // Lấy giá trị của cột "IdDelete" từ dòng được chọn
-                    string idDelete = dgvThongtin.Rows[e.RowIndex].Cells["IdDelete"].Value.ToString();
-
-                    // Thực hiện lệnh xóa dựa trên giá trị "IdDelete"
-                    string query = "DELETE FROM ChiTieu WHERE IdDelete = '" + idDelete + "'";
-                    modify.Command(query);
-
-                    // Tải lại dữ liệu
-                    ReloadData();
-                }
-            
 
         }
         private void btnxoainfo_Click(object sender, EventArgs e)
         {
-            /*try
+         using (SqlConnection connection = Connection.GetSqlConnection())
             {
-                if (dgvThongtin.SelectedRows.Count > 0)
+                string deleteQuery = "DELETE FROM ChiTieu WHERE ID = @STT_CT";
+
+                using (SqlCommand command = new SqlCommand(deleteQuery, connection))
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa chi tiêu đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        foreach (DataGridViewRow row in dgvThongtin.SelectedRows)
-                        {
-                            int stt = Convert.ToInt32(row.Cells["STT_CT"].Value);
-                            string query = "DELETE FROM ChiTieu WHERE STT_CT = '" + stt + "'";
-                            modify.Command(query);
-                        }
-                        ReloadData();
-                    }
+                    connection.Open();
+                    command.Parameters.AddWithValue("@STT_CT", ID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Record Deleted Successfully!");
+                    ReloadData();
+
                 }
             }
-            
-            catch (Exception ex)
-            {
-                MessageBox.Show("Vui lòng chọn dữ liệu để xóa!", "Thông báo");
-            }*/
         }
 
         private void btnadddanhmuc_Click(object sender, EventArgs e)
@@ -173,6 +150,11 @@ namespace QuanLyChiTieu
 
         }
 
-        
+        private void dgvThongtin_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txt_Name.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txt_State.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
     }
 }

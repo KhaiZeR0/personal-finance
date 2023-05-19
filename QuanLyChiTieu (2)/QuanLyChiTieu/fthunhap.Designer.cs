@@ -133,7 +133,7 @@
             this.dgvLichSuThuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichSuThuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichSuThuNhap.Location = new System.Drawing.Point(22, 65);
-            this.dgvLichSuThuNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLichSuThuNhap.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLichSuThuNhap.Name = "dgvLichSuThuNhap";
             this.dgvLichSuThuNhap.RowHeadersWidth = 51;
             this.dgvLichSuThuNhap.RowTemplate.Height = 24;
@@ -167,6 +167,7 @@
             this.btnxoainfo.TabIndex = 14;
             this.btnxoainfo.Text = "Xoá";
             this.btnxoainfo.UseVisualStyleBackColor = true;
+            this.btnxoainfo.Click += new System.EventHandler(this.btnxoainfo_Click);
             // 
             // label13
             // 
@@ -190,6 +191,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "fthunhap";
             this.Text = "Thu Nhập Cá Nhân";
+            this.Load += new System.EventHandler(this.fthunhap_Load);
             this.bunifuPanel4.ResumeLayout(false);
             this.bunifuPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuThuNhap)).EndInit();

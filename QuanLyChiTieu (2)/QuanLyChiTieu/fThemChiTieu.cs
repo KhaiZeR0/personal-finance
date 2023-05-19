@@ -152,9 +152,11 @@ namespace QuanLyChiTieu
 
         private void dgvThongtin_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txt_Name.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txt_State.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            ID = Convert.ToInt32(dgvThongtin.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtTen.Text = dgvThongtin.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtDM.Text = dgvThongtin.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtSL.Text = dgvThongtin.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtGC.Text = dgvThongtin.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
     }
 }

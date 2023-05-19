@@ -18,7 +18,6 @@ namespace QuanLyChiTieu
     { 
         Modify modify = new Modify();
         SqlDataAdapter adapter = new SqlDataAdapter();
-        DataTable dataTable = new DataTable();
 
         public fThemChiTieu()
         {
@@ -26,10 +25,7 @@ namespace QuanLyChiTieu
         }
         
         
-        private void dgvThongtin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
         private void fThemChiTieu_Load(object sender, EventArgs e)
         {
             ReloadData();
@@ -37,11 +33,14 @@ namespace QuanLyChiTieu
 
         private void ReloadData()
         {
-            string query = "SELECT ChiTieu.TenCT, ChiTieu.DMCT, ChiTieu.SoTien, ChiTieu.SoLuong, ChiTieu.GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE ChiTieu.MaCT = TaiKhoan.MaTK";
-            /*DataTable dataTable = new DataTable();*/
+            string query = "SELECT ChiTieu.STT_CT, ChiTieu.TenCT, ChiTieu.DMCT, ChiTieu.SoTien, ChiTieu.SoLuong, ChiTieu.NgayChi, ChiTieu.GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE ChiTieu.MaCT = TaiKhoan.MaTK";
+            DataTable dataTable = new DataTable();
+            dataTable.Clear();
             dataTable = modify.GetData(query);
             dgvThongtin.DataSource = dataTable;
 
+            // Ẩn cột "STT_CT"
+            dgvThongtin.Columns["STT_CT"].Visible = false;
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -73,13 +72,12 @@ namespace QuanLyChiTieu
                 double Sotien = Cost;
                 string SoLG = txtSL.Text;
                 string Note = txtGC.Text;
-                Random rand = new Random();
-                string randomID = (rand.Next(999999)).ToString();
+               
 
                 DateTime currentDate = DateTime.Now;
                 string NgayChi = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
 
-                string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi,IdDelete) SELECT MaTK, '" + tenCT + "', '" + DMCT + "', '" + Sotien + "', '" + SoLG + "', '" + Note + "', '" + NgayChi + "', '" + randomID + "' FROM TaiKhoan";
+                string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi) SELECT MaTK, N'" + tenCT + "', N'" + DMCT + "', '" + Sotien + "', '" + SoLG + "', N'" + Note + "', '" + NgayChi + "' FROM TaiKhoan";
                 modify.Command(query);
                 ReloadData();
             }   
@@ -88,29 +86,36 @@ namespace QuanLyChiTieu
                 MessageBox.Show("Lỗi: " + ex.ToString());
             }
         }
-        private void dgvThongtin_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private void btnxoainfo_Click(object sender, EventArgs e)
         {
-         using (SqlConnection connection = Connection.GetSqlConnection())
+            if (dgvThongtin.SelectedRows.Count > 0)
             {
-                string deleteQuery = "DELETE FROM ChiTieu WHERE ID = @STT_CT";
-
-                using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    connection.Open();
-                    command.Parameters.AddWithValue("@STT_CT", ID);
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                    MessageBox.Show("Record Deleted Successfully!");
-                    ReloadData();
+                    int selectedRowIndex = dgvThongtin.SelectedRows[0].Index;
+                    int sttCT = Convert.ToInt32(dgvThongtin.Rows[selectedRowIndex].Cells["STT_CT"].Value);
 
+                    string deleteQuery = "DELETE FROM ChiTieu WHERE STT_CT = @STT_CT";
+                    using (SqlConnection connection = Connection.GetSqlConnection())
+                    {
+                        using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@STT_CT", sttCT);
+                            connection.Open();
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                            MessageBox.Show("Xóa dữ liệu thành công!");
+                            ReloadData();
+                        }
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng dữ liệu để xóa!", "Thông báo");
+            }
         }
-
         private void btnadddanhmuc_Click(object sender, EventArgs e)
         {
             txtDM.Items.Add(txtDM.Text);
@@ -123,9 +128,12 @@ namespace QuanLyChiTieu
                    txtDM.Items.Remove(selectedDanhMuc);
             }
         }
-        
 
-        
+
+        private void dgvThongtin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -152,11 +160,11 @@ namespace QuanLyChiTieu
 
         private void dgvThongtin_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ID = Convert.ToInt32(dgvThongtin.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtTen.Text = dgvThongtin.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDM.Text = dgvThongtin.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtSL.Text = dgvThongtin.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtGC.Text = dgvThongtin.Rows[e.RowIndex].Cells[4].Value.ToString();
+         
+        }
+        private void dgvThongtin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

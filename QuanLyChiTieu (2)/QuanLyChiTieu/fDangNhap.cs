@@ -10,11 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyChiTieu
 {
     public partial class fDangNhap : Form
     {
+        public static string namesend;
         public fDangNhap()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace QuanLyChiTieu
             {
                 string passHash = GenerateHash(pass_Word);
                 string query = "select * from TaiKhoan where TenTK = '" + user_name + "' and MatKhau = '" + passHash + "'";
-
+                namesend = (txtTenDangNhap.Text).ToString();
                 if (modify.TaiKhoans(query).Count != 0)
                 {
                     fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
@@ -63,6 +65,7 @@ namespace QuanLyChiTieu
                 {
                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
             }
         }
 

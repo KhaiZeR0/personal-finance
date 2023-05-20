@@ -14,7 +14,7 @@ namespace QuanLyChiTieu
 {
     public partial class fQuanLyChiTieu : Form
     {
-
+        string username = fDangNhap.namesend;
         public fQuanLyChiTieu()
         {
             InitializeComponent();
@@ -103,6 +103,14 @@ namespace QuanLyChiTieu
         private void fQuanLyChiTieu_Load(object sender, EventArgs e)
         {
             ReloadData();
+            MessageBox.Show("Chào mừng bạn đã trở lại " + username);
+            string greeting = username;
+            label10.Text = greeting;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

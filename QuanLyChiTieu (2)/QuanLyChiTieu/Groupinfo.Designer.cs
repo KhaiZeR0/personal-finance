@@ -66,7 +66,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(21, 300);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 20);
+            this.label8.Size = new System.Drawing.Size(125, 25);
             this.label8.TabIndex = 10;
             this.label8.Text = "ver 1.1 alpha";
             // 
@@ -77,7 +77,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(261, 300);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.Size = new System.Drawing.Size(172, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "Copyright © 2023";
             // 
@@ -88,10 +88,11 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(21, 125);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 102);
+            this.label4.Size = new System.Drawing.Size(248, 138);
             this.label4.TabIndex = 8;
             this.label4.Text = "- Nguyễn Mạnh Tiến\r\n- Nguyễn Ngô Hoàng Nguyên\r\n- Cao Phan Khải\r\n- Huỳnh Lê Bảo Tỉ" +
     "nh\r\n- Trần Gia Bảo\r\n\r\n";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -100,7 +101,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 20);
+            this.label3.Size = new System.Drawing.Size(171, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Thành viên nhóm:\r\n";
             // 
@@ -111,7 +112,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 21);
+            this.label1.Size = new System.Drawing.Size(441, 28);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nhóm 5 - Phần mềm quản lý chi tiêu cá nhân";
             // 
@@ -122,13 +123,13 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(19, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 37);
+            this.label2.Size = new System.Drawing.Size(183, 46);
             this.label2.TabIndex = 5;
             this.label2.Text = "Giới Thiệu";
             // 
             // Groupinfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 347);
             this.Controls.Add(this.bunifuPanel1);

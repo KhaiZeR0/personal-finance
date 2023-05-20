@@ -1,35 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyChiTieu
 {
     public partial class fQuanLyChiTieu : Form
     {
+        Modify modify = new Modify();
         string username = fDangNhap.namesend;
+        
         public fQuanLyChiTieu()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuPanel7_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void bunifuButton7_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -53,15 +39,7 @@ namespace QuanLyChiTieu
             fthunhap.ShowDialog();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void bunifuButton5_Click(object sender, EventArgs e)
         {
@@ -79,7 +57,8 @@ namespace QuanLyChiTieu
             {
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
-                    string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT";
+                    int UserID = Modify.UserID;
+                    string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = '" + UserID + "'";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -107,11 +86,29 @@ namespace QuanLyChiTieu
             string greeting = username;
             label10.Text = greeting;
         }
+        private void label4_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
         private void label10_Click(object sender, EventArgs e)
         {
 
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPanel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

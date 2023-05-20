@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Security.Cryptography;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace QuanLyChiTieu
 {
@@ -21,13 +13,6 @@ namespace QuanLyChiTieu
         {
             InitializeComponent();
         }
-
-        
-        private void fDangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void link_lblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             fQuenMatKhau quenMatKhau = new fQuenMatKhau();
@@ -60,15 +45,14 @@ namespace QuanLyChiTieu
                 {
                     fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
                     quanLyChiTieu.ShowDialog();
+             
                 }
                 else
                 {
                     MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
+                }       
             }
         }
-
         private static string GenerateHash(string toHash)
         {
             var crypt = new SHA256Managed();
@@ -79,6 +63,10 @@ namespace QuanLyChiTieu
                 hash += theByte.ToString("x2");
             }
             return hash;
+        }
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

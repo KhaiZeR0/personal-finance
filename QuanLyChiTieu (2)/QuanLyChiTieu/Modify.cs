@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
-using System.Text;
 
+    
 namespace QuanLyChiTieu
 {
     internal class Modify
     {
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
+        string username = fDangNhap.namesend;
+        public static int UserID;
 
         public List<TaiKhoan> TaiKhoans(string query)
         {
@@ -50,7 +50,6 @@ namespace QuanLyChiTieu
                 }
             }
         }
-
         public void Command(string query)
         {
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())
@@ -59,6 +58,31 @@ namespace QuanLyChiTieu
                 sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
             }
+        }
+        public int GetCurrentUser()
+        {
+            int user = 0;
+            string query = "SELECT MaTK FROM TaiKhoan WHERE TenTK = @TenTK";
+            string tenTaiKhoan = username;
+            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@TenTK", tenTaiKhoan);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            user = UserID;
+            return user;
         }
     }
 }

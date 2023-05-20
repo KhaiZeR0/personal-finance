@@ -12,6 +12,8 @@ CREATE TABLE TaiKhoan
 	MatKhau VARCHAR(1000) NOT NULL,
 	Email_TK VARCHAR(255) NOT NULL,
 )
+select * from TaiKhoan
+select * from ChiTieu
 GO
 -- Tạo bảng chi tiêu
 CREATE TABLE ChiTieu 

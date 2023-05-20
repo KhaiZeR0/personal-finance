@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyChiTieu
@@ -25,7 +19,8 @@ namespace QuanLyChiTieu
         }
         private void ReloadData()
         {
-            string query = "SELECT ThuNhap.STT_TN, ThuNhap.SoTien, ThuNhap.NgayThu, ThuNhap.GhiChu FROM ThuNhap INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ThuNhap.MaTN WHERE ThuNhap.MaTN = TaiKhoan.MaTK";
+            int UserID = Modify.UserID;
+            string query = "SELECT STT_TN, SoTien, NgayThu, GhiChu FROM ThuNhap INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ThuNhap.MaTN WHERE TaiKhoan.MaTK = '" + UserID + "'";
             DataTable dataTable = new DataTable();
             dataTable.Clear();
             dataTable = modify.GetData(query);

@@ -1,45 +1,37 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyChiTieu
 {
     public partial class fThemChiTieu : Form
     { 
         Modify modify = new Modify();
-        SqlDataAdapter adapter = new SqlDataAdapter();
-
         public fThemChiTieu()
         {
             InitializeComponent();
         }
-        
-        
-       
         private void fThemChiTieu_Load(object sender, EventArgs e)
         {
+            if(dgvThongtin != null)
             ReloadData();
         }
 
         private void ReloadData()
         {
-            string query = "SELECT ChiTieu.STT_CT, ChiTieu.TenCT, ChiTieu.DMCT, ChiTieu.SoTien, ChiTieu.SoLuong, ChiTieu.NgayChi, ChiTieu.GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE ChiTieu.MaCT = TaiKhoan.MaTK";
+            int UserID = Modify.UserID;
+            string query = "SELECT STT_CT, TenCT, DMCT, SoTien, SoLuong, NgayChi, GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = '" + UserID + "'";
             DataTable dataTable = new DataTable();
             dataTable.Clear();
+
             dataTable = modify.GetData(query);
+
+
             dgvThongtin.DataSource = dataTable;
             dgvThongtin.Columns["STT_CT"].Visible = false;
         }
+
 
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -70,8 +62,7 @@ namespace QuanLyChiTieu
                 double Sotien = Cost;
                 string SoLG = txtSL.Text;
                 string Note = txtGC.Text;
-               
-
+             
                 DateTime currentDate = DateTime.Now;
                 string NgayChi = currentDate.ToString("yyyy-MM-dd");
 
@@ -127,8 +118,6 @@ namespace QuanLyChiTieu
                    txtDM.Items.Remove(selectedDanhMuc);
             }
         }
-
-
         private void dgvThongtin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -141,25 +130,21 @@ namespace QuanLyChiTieu
         {
 
         }
-
         private void txtTien_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void txtSL_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void dgvThongtin_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void dgvThongtin_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-         
+
         }
         private void dgvThongtin_CellClick(object sender, DataGridViewCellEventArgs e)
         {

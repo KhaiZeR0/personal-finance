@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,5 +68,42 @@ namespace QuanLyChiTieu
             Groupinfo groupinfo = new Groupinfo();
             groupinfo.ShowDialog();
         }
+
+        private void btnreload_Click(object sender, EventArgs e)
+        {
+            ReloadData();
+        }
+        private void ReloadData()
+        {
+            try
+            {
+                using (SqlConnection connection = Connection.GetSqlConnection())
+                {
+                    string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            dataGridView1.DataSource = dataTable;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void fQuanLyChiTieu_Load(object sender, EventArgs e)
+        {
+            ReloadData();
+        }
     }
 }
+

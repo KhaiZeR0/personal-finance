@@ -42,6 +42,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel7 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btnreload = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.bunifuPanel6 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -109,14 +110,26 @@
             this.bunifuPanel7.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel7.BorderRadius = 30;
             this.bunifuPanel7.BorderThickness = 1;
+            this.bunifuPanel7.Controls.Add(this.btnreload);
             this.bunifuPanel7.Controls.Add(this.dataGridView1);
             this.bunifuPanel7.Controls.Add(this.label11);
             this.bunifuPanel7.Location = new System.Drawing.Point(701, 37);
             this.bunifuPanel7.Name = "bunifuPanel7";
             this.bunifuPanel7.ShowBorders = true;
-            this.bunifuPanel7.Size = new System.Drawing.Size(358, 551);
+            this.bunifuPanel7.Size = new System.Drawing.Size(383, 551);
             this.bunifuPanel7.TabIndex = 4;
             this.bunifuPanel7.Click += new System.EventHandler(this.bunifuPanel7_Click);
+            // 
+            // btnreload
+            // 
+            this.btnreload.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreload.Location = new System.Drawing.Point(139, 487);
+            this.btnreload.Name = "btnreload";
+            this.btnreload.Size = new System.Drawing.Size(116, 46);
+            this.btnreload.TabIndex = 12;
+            this.btnreload.Text = "Load lại";
+            this.btnreload.UseVisualStyleBackColor = true;
+            this.btnreload.Click += new System.EventHandler(this.btnreload_Click);
             // 
             // dataGridView1
             // 
@@ -124,7 +137,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(24, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(312, 477);
+            this.dataGridView1.Size = new System.Drawing.Size(339, 423);
             this.dataGridView1.TabIndex = 4;
             // 
             // label11
@@ -909,6 +922,7 @@
             this.Name = "fQuanLyChiTieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý chi tiêu ";
+            this.Load += new System.EventHandler(this.fQuanLyChiTieu_Load);
             this.bunifuPanel3.ResumeLayout(false);
             this.bunifuPanel7.ResumeLayout(false);
             this.bunifuPanel7.PerformLayout();
@@ -956,5 +970,6 @@
         private System.Windows.Forms.Label label11;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnreload;
     }
 }

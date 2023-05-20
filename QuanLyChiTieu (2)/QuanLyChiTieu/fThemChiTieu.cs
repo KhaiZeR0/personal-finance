@@ -73,7 +73,7 @@ namespace QuanLyChiTieu
                
 
                 DateTime currentDate = DateTime.Now;
-                string NgayChi = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
+                string NgayChi = currentDate.ToString("yyyy-MM-dd");
 
                 string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi) SELECT MaTK, N'" + tenCT + "', N'" + DMCT + "', '" + Sotien + "', '" + SoLG + "', N'" + Note + "', '" + NgayChi + "' FROM TaiKhoan";
                 modify.Command(query);

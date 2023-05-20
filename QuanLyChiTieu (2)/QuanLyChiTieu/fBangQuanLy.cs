@@ -57,7 +57,7 @@ namespace QuanLyChiTieu
             {
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
-                    int UserID = Modify.UserID;
+                    int UserID = modify.GetCurrentUser();
                     string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = '" + UserID + "'";
 
                     using (SqlCommand command = new SqlCommand(query, connection))

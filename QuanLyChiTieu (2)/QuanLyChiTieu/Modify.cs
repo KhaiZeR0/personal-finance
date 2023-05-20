@@ -10,7 +10,7 @@ namespace QuanLyChiTieu
         private SqlCommand sqlCommand;
         private SqlDataReader sqlDataReader;
         string username = fDangNhap.namesend;
-        public static int UserID;
+
 
         public List<TaiKhoan> TaiKhoans(string query)
         {
@@ -76,12 +76,11 @@ namespace QuanLyChiTieu
                     {
                         if (reader.Read())
                         {
-                            user = reader.GetInt32(0);
+                           user  = reader.GetInt32(0);
                         }
                     }
                 }
             }
-            user = UserID;
             return user;
         }
     }

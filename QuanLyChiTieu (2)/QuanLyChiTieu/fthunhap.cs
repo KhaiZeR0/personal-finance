@@ -19,14 +19,30 @@ namespace QuanLyChiTieu
         }
         private void ReloadData()
         {
-            int UserID = Modify.UserID;
-            string query = "SELECT STT_TN, SoTien, NgayThu, GhiChu FROM ThuNhap INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ThuNhap.MaTN WHERE TaiKhoan.MaTK = '" + UserID + "'";
+            int userID = modify.GetCurrentUser();
+            string query = "SELECT STT_TN, SoTien, NgayThu, GhiChu FROM ThuNhap INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ThuNhap.MaTN WHERE ThuNhap.MaTN = @UserID";
             DataTable dataTable = new DataTable();
             dataTable.Clear();
-            dataTable = modify.GetData(query);
+
+            using (SqlConnection connection = Connection.GetSqlConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@UserID", userID);
+
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+            }
+
             dgvLichSuThuNhap.DataSource = dataTable;
             dgvLichSuThuNhap.Columns["STT_TN"].Visible = false;
         }
+
         private void btnSaveThuNhap_Click_1(object sender, EventArgs e)
         {
             try

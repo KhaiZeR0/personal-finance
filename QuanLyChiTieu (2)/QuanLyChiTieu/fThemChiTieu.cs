@@ -20,17 +20,30 @@ namespace QuanLyChiTieu
 
         private void ReloadData()
         {
-            int UserID = Modify.UserID;
-            string query = "SELECT STT_CT, TenCT, DMCT, SoTien, SoLuong, NgayChi, GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = '" + UserID + "'";
+            int userID = modify.GetCurrentUser();
+            string query = "SELECT STT_CT, TenCT, DMCT, SoTien, SoLuong, NgayChi, GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = @UserID";
             DataTable dataTable = new DataTable();
             dataTable.Clear();
 
-            dataTable = modify.GetData(query);
+            using (SqlConnection connection = Connection.GetSqlConnection())
+            {
+                connection.Open();
 
+                using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@UserID", userID);
+
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+            }
 
             dgvThongtin.DataSource = dataTable;
             dgvThongtin.Columns["STT_CT"].Visible = false;
         }
+
 
 
         private void btnsave_Click(object sender, EventArgs e)

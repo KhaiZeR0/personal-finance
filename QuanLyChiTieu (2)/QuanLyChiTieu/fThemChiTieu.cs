@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace QuanLyChiTieu
@@ -51,14 +52,27 @@ namespace QuanLyChiTieu
                 double Cost = double.Parse(txtTien.Text);
                 Cost = Cost * SL;
 
+                int userID = modify.GetCurrentUser();
+                string OutComeQuery = "SELECT SUM(SoTien) FROM ChiTieu WHERE MaCT = '" + userID + "'";
+                string InComeQuery = "SELECT SUM(SoTien) FROM ThuNhap WHERE MaTN = '" + userID + "'";
+
+                double sumOut = modify.SumOutcome_Income(OutComeQuery);
+                double sumIn = modify.SumOutcome_Income(InComeQuery);           
+
+                sumOut = sumOut + Cost;
+                if (sumOut > sumIn)
+                {
+                    MessageBox.Show("Số tiền chi tiêu của bạn không được vượt quá mức số tiền thu nhập", "Thông báo!");return;
+                }
+                
+                DateTime toDate = DateTime.Now;
+                string NgayChi = toDate.ToString("yyyy-MM-dd");
+
                 string tenCT = txtTen.Text;
-                var DMCT = txtDM.Text;
+                string DMCT = txtDM.Text;
                 string SoLG = txtSL.Text;
                 string Note = txtGC.Text;
-                
-                DateTime currentDate = DateTime.Now;
-                string NgayChi = currentDate.ToString("yyyy-MM-dd");
-
+        
                 int UserID = modify.GetCurrentUser();
                 string query = "INSERT INTO ChiTieu(TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi, MaCT) VALUES (@TenCT, @DMCT, @SoTien, @SoLuong, @GhiChu, @NgayChi, @UserID)";
 
@@ -78,7 +92,6 @@ namespace QuanLyChiTieu
                         command.ExecuteNonQuery();
                     }
                 }
-
                 ReloadData();
             }   
             catch (Exception ex)

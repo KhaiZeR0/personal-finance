@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -66,6 +67,25 @@ namespace QuanLyChiTieu
                 }
             }
             return dataTable;
+        }
+        public double SumOutcome_Income(string query)
+        {
+            double tempSum = 0 ;
+
+            using (SqlConnection connection = Connection.GetSqlConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand sum = new SqlCommand(query, connection))
+                {
+                    object SumResult = sum.ExecuteScalar();
+                    if (SumResult != DBNull.Value)
+                    {
+                        tempSum = Convert.ToDouble(SumResult);
+                    }
+                }
+            }
+            return tempSum;
         }
         public int GetCurrentUser()
         {

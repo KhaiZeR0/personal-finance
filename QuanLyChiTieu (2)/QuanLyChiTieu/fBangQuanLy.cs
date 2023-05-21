@@ -7,20 +7,34 @@ namespace QuanLyChiTieu
 {
     public partial class fQuanLyChiTieu : Form
     {
+        
         Modify modify = new Modify();
         string username = fDangNhap.namesend;
-        
+
         public fQuanLyChiTieu()
         {
             InitializeComponent();
         }
         private void fQuanLyChiTieu_Load(object sender, EventArgs e)
         {
-            ReloadData();
-            MessageBox.Show("Chào mừng bạn đã trở lại " + username);
-            string query = "SELECT ";
+            DateTime fromDate = DateTime.Now.AddDays(-30);
+            string fromDateStr = fromDate.ToString("yyyy-MM-dd");
+
+            DateTime toDate = DateTime.Now;
+            string toDateStr = toDate.ToString("yyyy-MM-dd");
+            int userID = modify.GetCurrentUser();
+            string OutComeQuery = "SELECT SUM(SoTien) FROM ChiTieu WHERE NgayChi BETWEEN '" + fromDateStr + "' AND '" + toDateStr + "' AND MaCT = '" + userID + "'";
+
+            string InComeQuery = "SELECT SUM(SoTien) FROM ThuNhap WHERE NgayThu BETWEEN '" + fromDateStr + "' AND '" + toDateStr + "' AND MaTN = '" + userID + "'";
+
+            double sumOut = modify.SumOutcome_Income(OutComeQuery);
+            double sumInt = modify.SumOutcome_Income(InComeQuery);
             string greeting = username;
             label10.Text = greeting;
+            label4.Text = sumInt.ToString();
+            label7.Text = sumOut.ToString();
+            ReloadData();
+            MessageBox.Show("Chào mừng bạn đã trở lại " + username);
         }
         private void ReloadData()
         {
@@ -35,6 +49,11 @@ namespace QuanLyChiTieu
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btnreload_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1 != null)
+                ReloadData();
         }
         private void bunifuButton7_Click(object sender, EventArgs e)
         {
@@ -63,12 +82,7 @@ namespace QuanLyChiTieu
             groupinfo.ShowDialog();
         }
 
-        private void btnreload_Click(object sender, EventArgs e)
-        {
-            if(dataGridView1 != null)
-            ReloadData();
-        }
-        
+       
         
         private void label4_Click(object sender, EventArgs e)
         {
@@ -94,6 +108,7 @@ namespace QuanLyChiTieu
         {
 
         }
+    
     }
 }
 

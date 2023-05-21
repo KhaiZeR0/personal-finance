@@ -7,7 +7,7 @@ namespace QuanLyChiTieu
 {
     public partial class fQuanLyChiTieu : Form
     {
-        
+
         Modify modify = new Modify();
         string username = fDangNhap.namesend;
 
@@ -35,14 +35,16 @@ namespace QuanLyChiTieu
             label7.Text = sumOut.ToString();
             ReloadData();
             MessageBox.Show("Chào mừng bạn đã trở lại " + username);
-            fillchart();
             SumTien();
+            fillchart();
+
         }
+        
         private void ReloadData()
         {
             try
             {
-                string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu WHERE MaCT = @UserID";
+                string query = "SELECT TenCT as [Tên chi tiêu], SoTien as [Số tiền], NgayChi as[Ngày chi] FROM ChiTieu WHERE MaCT = @UserID";
                 DataTable dataTable = modify.LoadData(query);
 
                 dataGridView1.DataSource = dataTable;
@@ -56,7 +58,7 @@ namespace QuanLyChiTieu
         {
             if (dataGridView1 != null)
                 ReloadData();
-                
+
         }
         private void bunifuButton7_Click(object sender, EventArgs e)
         {
@@ -64,7 +66,7 @@ namespace QuanLyChiTieu
         }
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
-            
+
             fThemChiTieu themchitieu = new fThemChiTieu();
             themchitieu.ShowDialog();
         }
@@ -116,7 +118,7 @@ namespace QuanLyChiTieu
                     int userID = modify.GetCurrentUser();
                     for (int month = 1; month <= 12; month++)
                     {
-                        string query = "SELECT Sum(SoTien)  FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
+                        string query = "SELECT Sum(SoTien) AS TotalAmount FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@month", month);
                         command.Parameters.AddWithValue("@userID", userID);
@@ -128,7 +130,7 @@ namespace QuanLyChiTieu
                         command.Parameters.AddWithValue("@sumValue", sumValue);
                         command.ExecuteNonQuery();
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -162,7 +164,7 @@ namespace QuanLyChiTieu
         {
 
         }
-    
+
     }
 }
 

@@ -19,10 +19,10 @@ namespace QuanLyChiTieu
             if(dgvThongtin != null)
             ReloadData();
         }
-
+        
         private void ReloadData()
         {
-            string query = "SELECT STT_CT, TenCT, DMCT, SoTien, SoLuong, NgayChi, GhiChu FROM ChiTieu WHERE MaCT = @UserID";
+            string query = "SELECT STT_CT, TenCT AS [Tên chi tiêu], DMCT AS [Danh mục], SoTien AS [Số tiền], SoLuong AS [Số lượng], NgayChi AS [Ngày chi], GhiChu AS [Ghi chú] FROM ChiTieu WHERE MaCT = @UserID";
             DataTable dataTable = modify.LoadData(query);
 
             dgvThongtin.DataSource = dataTable;

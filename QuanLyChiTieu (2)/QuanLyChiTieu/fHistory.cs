@@ -24,7 +24,7 @@ namespace QuanLyChiTieu
                 int userID = modify.GetCurrentUser();
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
-                    string query = "SELECT TenCT, SoTien, DMCT, NgayChi, GhiChu FROM ChiTieu WHERE NgayChi BETWEEN @FromDate AND @ToDate AND ChiTieu.MaCT = @UserID";
+                    string query = "SELECT TenCT as [Tên chi tiêu], SoTien as [Số tiền], DMCT as [Danh mục], NgayChi as [Ngày chi], GhiChu as [Ghi chú] FROM ChiTieu WHERE NgayChi BETWEEN @FromDate AND @ToDate AND ChiTieu.MaCT = @UserID";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

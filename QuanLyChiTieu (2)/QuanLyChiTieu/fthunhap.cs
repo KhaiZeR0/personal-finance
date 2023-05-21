@@ -21,7 +21,7 @@ namespace QuanLyChiTieu
         }
         private void ReloadData()
         {
-            string query = "SELECT STT_TN, SoTien, NgayThu, GhiChu FROM ThuNhap WHERE MaTN = @UserID";
+            string query = "SELECT STT_TN , SoTien as [Số tiền], NgayThu as [Ngày Nhận], GhiChu as [Ghi chú] FROM ThuNhap WHERE MaTN = @UserID";
             DataTable dataTable = modify.LoadData(query);
 
             dgvLichSuThuNhap.DataSource = dataTable;

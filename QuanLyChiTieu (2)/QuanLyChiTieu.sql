@@ -48,23 +48,23 @@ GO
 CREATE TABLE THONGKE
 (
 	ID INT IDENTITY PRIMARY KEY ,
-	Thang FLOAT NOT NULL,
-	TongTien FLOAT NOT NULL
+	Thang FLOAT ,
+	TongTien FLOAT 
 )
 GO
 
 
-INSERT INTO THONGKE (Thang,TongTien) VALUES 
- (1,100000),
- (2,100000),
- (3,100000),
- (4,100000),
- (5,100000),
- (6,100000),
- (7,100000),
- (8,100000),
- (9,100000),
- (10,100000),
- (11,100000),
- (12,100000);
+INSERT INTO THONGKE (Thang) VALUES 
+ (1),
+ (2),
+ (3),
+ (4),
+ (5),
+ (6),
+ (7),
+ (8),
+ (9),
+ (10),
+ (11),
+ (12);
 GO

@@ -1,5 +1,6 @@
-﻿use master
-go
+﻿USE master
+GO
+
 CREATE DATABASE QuanLyChiTieu
 GO
 
@@ -14,8 +15,8 @@ CREATE TABLE TaiKhoan
 	MatKhau VARCHAR(1000) NOT NULL,
 	Email_TK VARCHAR(255) NOT NULL,
 )
-select * from TaiKhoan
-select * from ChiTieu
+--select * from TaiKhoan
+--select * from ChiTieu
 GO
 -- Tạo bảng chi tiêu
 CREATE TABLE ChiTieu 
@@ -26,8 +27,7 @@ CREATE TABLE ChiTieu
 	SoTien FLOAT NOT NULL,
 	SoLuong INT NOT NULL,
 	GhiChu NVARCHAR(MAX),
-	NgayChi DATE,
-	SumChiTieu FLOAT, 
+	NgayChi DATE, 
 	MaCT INT NOT NULL,
 	CONSTRAINT fk_TaiKhoan_ChiTieu FOREIGN KEY (MaCT) REFERENCES TaiKhoan(MaTK)
 )
@@ -39,14 +39,9 @@ CREATE TABLE ThuNhap
 	SoTien FLOAT NOT NULL,
 	GhiChu NVARCHAR(MAX),
 	NgayThu DATE,
-	SumThuNhap FLOAT,
 	MaTN INT NOT NULL,
 	CONSTRAINT fk_TaiKhoan_ThuNhap FOREIGN KEY (MaTN) REFERENCES TaiKhoan(MaTK)
 )
 GO
 
--- Cập nhật tổng chi tiêu
---UPDATE ChiTieu SET SumChiTieu = (SELECT SUM(ct.SoTien) FROM ChiTieu ct WHERE ct.MaCT = ChiTieu.MaCT) WHERE MaCT IN (SELECT MaTK FROM TaiKhoan)
 
--- Cập nhật tổng thu nhập
---UPDATE ThuNhap SET SumThuNhap = (SELECT SUM(tn.SoTien) FROM ThuNhap tn WHERE tn.MaTN = ThuNhap.MaTN) WHERE MaTN IN (SELECT MaTK FROM TaiKhoan)

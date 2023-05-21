@@ -53,7 +53,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -218,9 +217,8 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(88, 101);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 28);
+            this.label6.Size = new System.Drawing.Size(0, 28);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Ngày/Tháng";
             // 
             // label7
             // 
@@ -253,7 +251,6 @@
             this.bunifuPanel4.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel4.BorderRadius = 30;
             this.bunifuPanel4.BorderThickness = 1;
-            this.bunifuPanel4.Controls.Add(this.label5);
             this.bunifuPanel4.Controls.Add(this.label4);
             this.bunifuPanel4.Controls.Add(this.label3);
             this.bunifuPanel4.Location = new System.Drawing.Point(36, 37);
@@ -261,17 +258,6 @@
             this.bunifuPanel4.ShowBorders = true;
             this.bunifuPanel4.Size = new System.Drawing.Size(284, 149);
             this.bunifuPanel4.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(106, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 28);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tháng 12";
             // 
             // label4
             // 
@@ -961,7 +947,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel6;

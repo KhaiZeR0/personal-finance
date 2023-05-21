@@ -35,8 +35,8 @@ namespace QuanLyChiTieu
             label7.Text = sumOut.ToString();
             ReloadData();
             MessageBox.Show("Chào mừng bạn đã trở lại " + username);
-            SumTien();
             fillchart();
+            SumTien();
         }
         private void ReloadData()
         {
@@ -122,13 +122,13 @@ namespace QuanLyChiTieu
                         command.Parameters.AddWithValue("@userID", userID);
                         decimal sumValue = (decimal)command.ExecuteScalar();
 
-                        string updateQuery = "UPDATE THONGKE SET TongTien = @sumValue WHERE Thang = @month AND MaCT = @userID";
+                        string updateQuery = "UPDATE THONGKE SET TongTien = @sumValue WHERE ID = @month";
                         command = new SqlCommand(updateQuery, connection);
                         command.Parameters.AddWithValue("@month", month);
-                        command.Parameters.AddWithValue("@userID", userID);
                         command.Parameters.AddWithValue("@sumValue", sumValue);
                         command.ExecuteNonQuery();
                     }
+                    
                 }
             }
             catch (Exception ex)

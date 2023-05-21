@@ -398,7 +398,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(848, 42);
+            this.label10.Location = new System.Drawing.Point(917, 42);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 21);
             this.label10.TabIndex = 6;
@@ -474,7 +474,7 @@
             this.bunifuButton6.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton6.IdleIconLeftImage")));
             this.bunifuButton6.IdleIconRightImage = null;
             this.bunifuButton6.IndicateFocus = false;
-            this.bunifuButton6.Location = new System.Drawing.Point(1011, 28);
+            this.bunifuButton6.Location = new System.Drawing.Point(1011, 23);
             this.bunifuButton6.Name = "bunifuButton6";
             this.bunifuButton6.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuButton6.OnDisabledState.BorderRadius = 1;

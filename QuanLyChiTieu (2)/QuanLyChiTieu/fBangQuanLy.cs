@@ -116,11 +116,11 @@ namespace QuanLyChiTieu
                     int userID = modify.GetCurrentUser();
                     for (int month = 1; month <= 12; month++)
                     {
-                        string query = "SELECT Sum(SoTien) FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
+                        string query = "SELECT Sum(SoTien)  FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@month", month);
                         command.Parameters.AddWithValue("@userID", userID);
-                        decimal sumValue = (decimal)command.ExecuteScalar();
+                        object sumValue = command.ExecuteScalar();
 
                         string updateQuery = "UPDATE THONGKE SET TongTien = @sumValue WHERE ID = @month";
                         command = new SqlCommand(updateQuery, connection);

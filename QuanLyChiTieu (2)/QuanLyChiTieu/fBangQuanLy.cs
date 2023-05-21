@@ -116,7 +116,7 @@ namespace QuanLyChiTieu
                     int userID = modify.GetCurrentUser();
                     for (int month = 1; month <= 12; month++)
                     {
-                        string query = "SELECT SUM(SoTien) AS TotalAmount FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
+                        string query = "SELECT Sum(SoTien) FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
                         SqlCommand command = new SqlCommand(query, connection);
                         command.Parameters.AddWithValue("@month", month);
                         command.Parameters.AddWithValue("@userID", userID);

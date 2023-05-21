@@ -45,7 +45,6 @@ namespace QuanLyChiTieu
                 {
                     fQuanLyChiTieu quanLyChiTieu = new fQuanLyChiTieu();
                     quanLyChiTieu.ShowDialog();
-                    this.Close();
                 }
                 else
                 {

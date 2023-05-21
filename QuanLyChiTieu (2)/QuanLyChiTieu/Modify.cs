@@ -28,7 +28,6 @@ namespace QuanLyChiTieu
                     string tenTaiKhoan = sqlDataReader.GetValue(0).ToString();
                     string matKhau = sqlDataReader.GetValue(1).ToString();
 
-
                     TaiKhoan taiKhoan = new TaiKhoan(tenTaiKhoan, matKhau);
                     taiKhoans.Add(taiKhoan);
                 }
@@ -38,17 +37,20 @@ namespace QuanLyChiTieu
         }
         public DataTable GetData(string query)
         {
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = Connection.GetSqlConnection())
             {
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    SqlDataReader reader = sqlCommand.ExecuteReader();
-                    DataTable dataTable = new DataTable();
-                    dataTable.Load(reader);
-                    return dataTable;
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
                 }
             }
+            return dataTable;
         }
         public void Command(string query)
         {
@@ -58,6 +60,28 @@ namespace QuanLyChiTieu
                 sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
             }
+        }
+        public DataTable LoadData(string query)
+        {
+            int userID = GetCurrentUser();
+            DataTable dataTable = new DataTable();
+            dataTable.Clear();
+
+            using (SqlConnection connection = Connection.GetSqlConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@UserID", userID);
+
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+            }
+            return dataTable;
         }
         public int GetCurrentUser()
         {

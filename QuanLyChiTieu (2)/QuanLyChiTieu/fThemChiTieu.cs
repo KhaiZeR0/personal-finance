@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -20,25 +21,8 @@ namespace QuanLyChiTieu
 
         private void ReloadData()
         {
-            int userID = modify.GetCurrentUser();
-            string query = "SELECT STT_CT, TenCT, DMCT, SoTien, SoLuong, NgayChi, GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = @UserID";
-            DataTable dataTable = new DataTable();
-            dataTable.Clear();
-
-            using (SqlConnection connection = Connection.GetSqlConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand sqlCommand = new SqlCommand(query, connection))
-                {
-                    sqlCommand.Parameters.AddWithValue("@UserID", userID);
-
-                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                    {
-                        dataTable.Load(reader);
-                    }
-                }
-            }
+            string query = "SELECT STT_CT, TenCT, DMCT, SoTien, SoLuong, NgayChi, GhiChu FROM ChiTieu WHERE MaCT = @UserID";
+            DataTable dataTable = modify.LoadData(query);
 
             dgvThongtin.DataSource = dataTable;
             dgvThongtin.Columns["STT_CT"].Visible = false;
@@ -72,15 +56,32 @@ namespace QuanLyChiTieu
 
                 string tenCT = txtTen.Text;
                 var DMCT = txtDM.Text;
-                double Sotien = Cost;
                 string SoLG = txtSL.Text;
                 string Note = txtGC.Text;
-             
+                
                 DateTime currentDate = DateTime.Now;
                 string NgayChi = currentDate.ToString("yyyy-MM-dd");
 
-                string query = "INSERT INTO ChiTieu (MaCT, TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi) SELECT MaTK, N'" + tenCT + "', N'" + DMCT + "', '" + Sotien + "', '" + SoLG + "', N'" + Note + "', '" + NgayChi + "' FROM TaiKhoan";
-                modify.Command(query);
+                int UserID = modify.GetCurrentUser();
+                string query = "INSERT INTO ChiTieu(TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi, MaCT) VALUES (@TenCT, @DMCT, @SoTien, @SoLuong, @GhiChu, @NgayChi, @UserID)";
+
+                using (SqlConnection connection = Connection.GetSqlConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TenCT", tenCT);
+                        command.Parameters.AddWithValue("@DMCT", DMCT);
+                        command.Parameters.AddWithValue("@SoTien", Cost);
+                        command.Parameters.AddWithValue("@SoLuong", SoLG);
+                        command.Parameters.AddWithValue("@GhiChu", Note);
+                        command.Parameters.AddWithValue("@NgayChi", NgayChi);
+                        command.Parameters.AddWithValue("@UserID", UserID);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+
                 ReloadData();
             }   
             catch (Exception ex)
@@ -108,9 +109,9 @@ namespace QuanLyChiTieu
                             command.ExecuteNonQuery();
                             connection.Close();
                             MessageBox.Show("Xóa dữ liệu thành công!");
-                            ReloadData();
                         }
                     }
+                    ReloadData();
                 }
             }
             else

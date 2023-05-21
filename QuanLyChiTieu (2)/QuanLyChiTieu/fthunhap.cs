@@ -19,25 +19,8 @@ namespace QuanLyChiTieu
         }
         private void ReloadData()
         {
-            int userID = modify.GetCurrentUser();
-            string query = "SELECT STT_TN, SoTien, NgayThu, GhiChu FROM ThuNhap INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ThuNhap.MaTN WHERE ThuNhap.MaTN = @UserID";
-            DataTable dataTable = new DataTable();
-            dataTable.Clear();
-
-            using (SqlConnection connection = Connection.GetSqlConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand sqlCommand = new SqlCommand(query, connection))
-                {
-                    sqlCommand.Parameters.AddWithValue("@UserID", userID);
-
-                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                    {
-                        dataTable.Load(reader);
-                    }
-                }
-            }
+            string query = "SELECT STT_TN, SoTien, NgayThu, GhiChu FROM ThuNhap WHERE MaTN = @UserID";
+            DataTable dataTable = modify.LoadData(query);
 
             dgvLichSuThuNhap.DataSource = dataTable;
             dgvLichSuThuNhap.Columns["STT_TN"].Visible = false;
@@ -55,11 +38,12 @@ namespace QuanLyChiTieu
 
                 double Sotien = double.Parse(txtThuNhap.Text);
                 string Note = txtGhiChu.Text;
+                int UserID = modify.GetCurrentUser();
 
                 DateTime currentDate = DateTime.Now;
                 string NgayThu = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
 
-                string query = "INSERT INTO ThuNhap (MaTN, SoTien, GhiChu, NgayThu) SELECT MaTK, '" + Sotien + "', N'" + Note + "', '" + NgayThu + "' FROM TaiKhoan";
+                string query = "INSERT INTO ThuNhap (MaTN, SoTien, GhiChu, NgayThu) VALUE( '" + UserID + "', '" + Sotien + "', N'" + Note + "', '" + NgayThu + "'";
                 modify.Command(query);
                 ReloadData();
             }

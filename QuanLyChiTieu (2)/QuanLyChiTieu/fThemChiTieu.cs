@@ -27,9 +27,6 @@ namespace QuanLyChiTieu
             dgvThongtin.DataSource = dataTable;
             dgvThongtin.Columns["STT_CT"].Visible = false;
         }
-
-
-
         private void btnsave_Click(object sender, EventArgs e)
         {
             try

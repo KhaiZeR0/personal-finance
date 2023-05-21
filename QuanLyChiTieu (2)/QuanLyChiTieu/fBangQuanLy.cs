@@ -23,6 +23,7 @@ namespace QuanLyChiTieu
 
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
+            
             fThemChiTieu themchitieu = new fThemChiTieu();
             themchitieu.ShowDialog();
         }
@@ -49,36 +50,23 @@ namespace QuanLyChiTieu
 
         private void btnreload_Click(object sender, EventArgs e)
         {
+            if(dataGridView1 != null)
             ReloadData();
         }
         private void ReloadData()
         {
             try
             {
-                using (SqlConnection connection = Connection.GetSqlConnection())
-                {
-                    int UserID = modify.GetCurrentUser();
-                    string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE TaiKhoan.MaTK = '" + UserID + "'";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        connection.Open();
-
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                        {
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-                            dataGridView1.DataSource = dataTable;
-                        }
-                    }
-                }
+                string query = "SELECT TenCT, SoTien, NgayChi FROM ChiTieu WHERE MaCT = @UserID";
+                DataTable dataTable = modify.LoadData(query);
+                
+                dataGridView1.DataSource = dataTable;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void fQuanLyChiTieu_Load(object sender, EventArgs e)
         {
             ReloadData();
@@ -109,6 +97,10 @@ namespace QuanLyChiTieu
 
         }
 
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace QuanLyChiTieu
         }
         private void fthunhap_Load(object sender, EventArgs e)
         {
+            if(dgvLichSuThuNhap !=null)
             ReloadData();
         }
         private void ReloadData()

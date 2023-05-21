@@ -8,6 +8,7 @@ namespace QuanLyChiTieu
 {
     public partial class fHistory : Form
     {
+        Modify modify = new Modify();
         public fHistory()
         {
             InitializeComponent();
@@ -20,15 +21,16 @@ namespace QuanLyChiTieu
                 DateTime utoDate = dtToDate.Value;
                 string FromDate = ufromDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
                 string ToDate = utoDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-
+                int userID = modify.GetCurrentUser();
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
-                    string query = "SELECT TenCT, SoTien, DMCT, NgayChi, GhiChu FROM ChiTieu INNER JOIN TaiKhoan ON TaiKhoan.MaTK = ChiTieu.MaCT WHERE NgayChi BETWEEN @FromDate AND @ToDate";
+                    string query = "SELECT TenCT, SoTien, DMCT, NgayChi, GhiChu FROM ChiTieu WHERE NgayChi BETWEEN @FromDate AND @ToDate AND ChiTieu.MaCT = @UserID";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@FromDate", FromDate);
                         command.Parameters.AddWithValue("@ToDate", ToDate);
+                        command.Parameters.AddWithValue("@UserID", userID);
 
                         connection.Open();
 

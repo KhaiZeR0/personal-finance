@@ -35,23 +35,7 @@ namespace QuanLyChiTieu
             }
             return taiKhoans;
         }
-        public DataTable GetData(string query)
-        {
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = Connection.GetSqlConnection())
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-            }
-            return dataTable;
-        }
+        
         public void Command(string query)
         {
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())

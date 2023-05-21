@@ -35,6 +35,8 @@ namespace QuanLyChiTieu
             label7.Text = sumOut.ToString();
             ReloadData();
             MessageBox.Show("Chào mừng bạn đã trở lại " + username);
+            SumTien();
+            fillchart();
         }
         private void ReloadData()
         {
@@ -54,6 +56,7 @@ namespace QuanLyChiTieu
         {
             if (dataGridView1 != null)
                 ReloadData();
+                
         }
         private void bunifuButton7_Click(object sender, EventArgs e)
         {
@@ -81,9 +84,60 @@ namespace QuanLyChiTieu
             Groupinfo groupinfo = new Groupinfo();
             groupinfo.ShowDialog();
         }
+        private void fillchart()
+        {
+            try
+            {
+                using (SqlConnection connection = Connection.GetSqlConnection())
+                {
+                    DataTable dt = new DataTable();
+                    connection.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT ID,TongTien FROM THONGKE", connection);
+                    da.Fill(dt);
+                    chart1.DataSource = dt;
+                    connection.Close();
 
-       
-        
+                    chart1.Series["Money"].XValueMember = "ID";
+                    chart1.Series["Money"].YValueMembers = "TongTien";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void SumTien()
+        {
+            try
+            {
+                using (SqlConnection connection = Connection.GetSqlConnection())
+                {
+                    connection.Open();
+                    int userID = modify.GetCurrentUser();
+                    for (int month = 1; month <= 12; month++)
+                    {
+                        string query = "SELECT SUM(SoTien) AS TotalAmount FROM ChiTieu WHERE Thang = @month AND MaCT = @userID";
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@month", month);
+                        command.Parameters.AddWithValue("@userID", userID);
+                        decimal sumValue = (decimal)command.ExecuteScalar();
+
+                        string updateQuery = "UPDATE THONGKE SET TongTien = @sumValue WHERE Thang = @month AND MaCT = @userID";
+                        command = new SqlCommand(updateQuery, connection);
+                        command.Parameters.AddWithValue("@month", month);
+                        command.Parameters.AddWithValue("@userID", userID);
+                        command.Parameters.AddWithValue("@sumValue", sumValue);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void label4_Click(object sender, EventArgs e)
         {
 

@@ -67,6 +67,8 @@ namespace QuanLyChiTieu
                 
                 DateTime toDate = DateTime.Now;
                 string NgayChi = toDate.ToString("yyyy-MM-dd");
+                DateTime currentMonth = DateTime.Now;
+                string Thang = currentMonth.ToString("MM");
 
                 string tenCT = txtTen.Text;
                 string DMCT = txtDM.Text;
@@ -74,7 +76,7 @@ namespace QuanLyChiTieu
                 string Note = txtGC.Text;
         
                 int UserID = modify.GetCurrentUser();
-                string query = "INSERT INTO ChiTieu(TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi, MaCT) VALUES (@TenCT, @DMCT, @SoTien, @SoLuong, @GhiChu, @NgayChi, @UserID)";
+                string query = "INSERT INTO ChiTieu(TenCT, DMCT, SoTien, SoLuong, GhiChu, NgayChi, Thang, MaCT) VALUES (@TenCT, @DMCT, @SoTien, @SoLuong, @GhiChu, @NgayChi, @Thang, @UserID)";
 
                 using (SqlConnection connection = Connection.GetSqlConnection())
                 {
@@ -86,6 +88,7 @@ namespace QuanLyChiTieu
                         command.Parameters.AddWithValue("@SoLuong", SoLG);
                         command.Parameters.AddWithValue("@GhiChu", Note);
                         command.Parameters.AddWithValue("@NgayChi", NgayChi);
+                        command.Parameters.AddWithValue("@Thang", Thang);
                         command.Parameters.AddWithValue("@UserID", UserID);
 
                         connection.Open();

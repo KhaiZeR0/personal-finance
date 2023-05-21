@@ -43,7 +43,7 @@ namespace QuanLyChiTieu
                 DateTime currentDate = DateTime.Now;
                 string NgayThu = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
 
-                string query = "INSERT INTO ThuNhap (MaTN, SoTien, GhiChu, NgayThu) VALUE( '" + UserID + "', '" + Sotien + "', N'" + Note + "', '" + NgayThu + "'";
+                string query = "INSERT INTO ThuNhap (MaTN, SoTien, GhiChu, NgayThu) VALUES ( '" + UserID + "', '" + Sotien + "', N'" + Note + "', '" + NgayThu + "')";
                 modify.Command(query);
                 ReloadData();
             }

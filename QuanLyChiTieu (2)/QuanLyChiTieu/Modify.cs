@@ -20,7 +20,7 @@ namespace QuanLyChiTieu
             {
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand(query, sqlConnection);
-
+                    
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 while (sqlDataReader.Read())

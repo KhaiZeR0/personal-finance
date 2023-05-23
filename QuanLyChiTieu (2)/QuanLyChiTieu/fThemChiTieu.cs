@@ -65,7 +65,7 @@ namespace QuanLyChiTieu
                     MessageBox.Show("Số tiền chi tiêu của bạn không được vượt quá mức số tiền thu nhập", "Thông báo!");return;
                 }
                 
-                DateTime toDate = DateTime.Now;
+                DateTime toDate = DateTime.Now.AddDays(-30);
                 string NgayChi = toDate.ToString("yyyy-MM-dd");
                 DateTime currentMonth = DateTime.Now;
                 string Thang = currentMonth.ToString("MM");

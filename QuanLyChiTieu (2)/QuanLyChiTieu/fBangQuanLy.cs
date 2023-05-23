@@ -17,7 +17,7 @@ namespace QuanLyChiTieu
         }
         private void fQuanLyChiTieu_Load(object sender, EventArgs e)
         {
-            DateTime fromDate = DateTime.Now.AddDays(-30);
+            DateTime fromDate = DateTime.Now.AddMonths(-1);
             string fromDateStr = fromDate.ToString("yyyy-MM-dd");
 
             DateTime toDate = DateTime.Now;
@@ -56,10 +56,12 @@ namespace QuanLyChiTieu
         }
         private void btnreload_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1 != null)
+            {
                 ReloadData();
-            SumTien();
-            fillchart();
+            }
+
 
         }
         private void bunifuButton7_Click(object sender, EventArgs e)
